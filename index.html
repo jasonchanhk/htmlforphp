@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <title>HTML Dashboard</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div class="container md:px-5">
+        <div class="row">
+            <div class="border-bottom p-2 fs-4">Dashboard</div>
+        </div>
+        <div class="row py-3">
+            <div class="col-12 col-md-6 py-2">
+                <div class="card p-2">
+                    <div class="card-body text-center">
+                        <p class="mb-3"><small>Account Total</p></small>
+
+                        <h3 class="card-title">$<span class="number" akhi="3400.48">0</span></h3>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 p-2">
+                <div class="card-chart mx-auto">
+                    <!-- Custom information -->
+                    <div class="about">
+                        <h3>Last 7 Days Profit</h3>
+                        <p class="lead">in USDT</p>
+                    </div>
+                    <!-- Canvas for Chart.js -->
+                    <canvas id="mycanvas"></canvas>
+                    <!-- Custom Axis -->
+                    <div class="axis">
+                        <div class="tick">
+                            <span class="day-number">10</span>
+                            <span class="day-name">MON</span>
+                            <span class="value value--this">$26</span>
+                        </div>
+                        <div class="tick">
+                            <span class="day-number">11</span>
+                            <span class="day-name">TUE</span>
+                            <span class="value value--this">$14</span>
+                        </div>
+                        <div class="tick">
+                            <span class="day-number">12</span>
+                            <span class="day-name">WED</span>
+                            <span class="value value--this">$22</span>
+                        </div>
+                        <div class="tick">
+                            <span class="day-number">13</span>
+                            <span class="day-name">THU</span>
+                            <span class="value value--this">$12</span>
+                        </div>
+                        <div class="tick">
+                            <span class="day-number">14</span>
+                            <span class="day-name">FRI</span>
+                            <span class="value value--this">$20</span>
+                        </div>
+                        <div class="tick">
+                            <span class="day-number">15</span>
+                            <span class="day-name">SAT</span>
+                            <span class="value value--this">$12</span>
+                        </div>
+                        <div class="tick">
+                            <span class="day-number">16</span>
+                            <span class="day-name">SUN</span>
+                            <span class="value value--this">$18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th style="font-size: 14px" colspan="2">Name</th>
+                            <th style="font-size: 14px">Amount</th>
+                            <th style="font-size: 14px">Value</th>
+                            <th style="font-size: 14px">Allocation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2  align-middle" style="width: 10%"><img
+                                    src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png" alt="Avatar">
+                            </td>
+                            <td class="py-2 lh-base fw-normal align-middle" style="width: 25%">USDT<br /><span
+                                    class="fw-normal mt-2" style="font-size: 14px">USD Tether</span></td>
+                            <td class="py-2 lh-base fw-normal align-middle" style="width: 25%">922.89 USDT</td>
+                            <td class="py-2 lh-base fw-normal align-middle" style="width: 25%">
+                                $923.03798295<br /><span class="fw-normal mt-2" style="font-size: 14px">0.02514397
+                                    BTC</span>
+                            </td>
+                            <td class="py-2 lh-base fw-normal align-middle" style="width: 15%">27.14%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        //number counter (class="number")
+        const counters = document.querySelectorAll('.number');
+        const speed = 200;
+
+        counters.forEach(counter => {
+            const animate = () => {
+                const value = +counter.getAttribute('akhi');
+                const data = +counter.innerText;
+
+                const time = value / speed;
+                if (data < value) {
+                    counter.innerText = Math.ceil(data + time);
+                    setTimeout(animate, 1);
+                } else {
+                    counter.innerText = value;
+                }
+
+            }
+
+            animate();
+        });
+
+
+        //line chart
+        var canvas = document.getElementById("mycanvas");
+        var config = {
+            type: 'line',
+            data: {
+                labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+                datasets: [
+                    {
+                        label: 'Temperature',
+                        data: [26, 14, 22, 12, 20, 12, 18],
+                        fill: false,
+                        borderColor: 'rgba(255, 255, 255, 0.2)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'transparent',
+                        pointBorderColor: '#FFFFFF',
+                        pointBorderWidth: 3,
+                        pointHoverBorderColor: 'rgba(255, 255, 255, 0.2)',
+                        pointHoverBorderWidth: 10,
+                        lineTension: 0,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 6,
+                        hitRadius: 6,
+                        hoverRadius: 6
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                        display: false,
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(25,25,0,0)',
+                        displayColors: false,
+                        bodyFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        callbacks: {
+                            label: function (context) {
+                                var value = context.parsed.y
+                                return '$' + value;
+                            }
+                        }
+                    },
+                    tension: 0.4,
+                }
+            },
+
+        };
+
+
+        window.chart = new Chart(canvas, config);
+    </script>
+</body>
+
+</html>
