@@ -1,95 +1,193 @@
+/* topbar */
+.navbar{
+  height: 60px;
+}
+/* topbar padding*/
+.navbar .container-fluid {
+  padding-right: 27px;
+  padding-left: 27px;
+}
+/* topbar */
 img {
   border-radius: 50%;
   width: 40px;
 }
 
+
+/* sidebar look*/
 .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-  }
-  
-  /* Sidebar links */
-  .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-  }
-  
-  /* Active/current link */
-  .sidebar a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 76px;
+  background-color: #f8f9fa;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+  visibility: visible;
+  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+}
+.hidesidebar {
+  -webkit-transform: translate3d(-100%, 0px, 0px);
+  transform: translate3d(-100%, 0px, 0px);
+  visibility: visible;
+  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+}
+/* Sidebar icon */
+.sidebar i {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 32px 0px;
+  text-decoration: none;
+}
   /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+.sidebar a:hover:not(.active) {
+  color: white;
+}
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 76px;
+  padding: 24px;
+}
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    -webkit-transform: translate3d(-100%, 0px, 0px);
+    transform: translate3d(-100%, 0px, 0px);
+    visibility: visible;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+  }  
+  .hidesidebar {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    visibility: visible;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
   }
-  
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-  div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
+  div.content {margin-left: 0;}
+}
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
-  
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  }
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  }
-
-  .card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;   
-    border-radius: 5px; /* 5px rounded corners */
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-    padding: 2px 16px;
-  }
-  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: #5555FF;
-    color: #f3f5f7
-  }
-
-/**/
-body {
-  background-color: #f3f5f7;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+/* title on page head */
+.title{
+  font-size: x-large;
+  font-weight: bolder;
 }
 
+
+/* tap control with underline */
+.tap{
+  font-size: x-small;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.tap-control span.active{  
+  border-bottom: 1px solid black;
+}
+
+
+/* search box */
+.search {
+  position: relative;
+  width: 400px
+}
+.form-control {
+  text-indent: 30px;
+}
+.search .form-control-sm {
+  border-radius: 10px;
+  background-color:  rgb(231, 231, 231);
+  color: grey;
+  border-width: 0;
+  font-weight: bolder;
+  font-size: 12px;
+}
+.fa-search {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  color: grey;
+}
+
+
+/* dropdown selction */
+.dropdown{
+  width: 200px
+}
+.dropdown .form-select-sm{
+  border-radius: 10px;
+  background-color:  rgb(231, 231, 231);
+  color: grey;
+  border-width: 0;  
+  font-weight: bolder;
+  font-size: 12px;
+  width: 100px;
+  display: inline-block
+}
+
+
+/* market coin table */
+body table{
+  font-size: 12px;
+}
+.tablebold{
+  font-weight: bolder;
+}
+.tablesmall{
+  font-weight: lighter;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: whitesmoke;
+}
+table.table-borderless td,
+table.table-borderless th {
+    border: 0;
+}
+table img {
+  border-radius: 50%;
+  width: 30px;
+}
+.controlchartsize{
+  width: 80px;
+  height: 40px
+}
+.fa-plus-circle .fa-sort-up {
+  font-size: 16px;
+}
+
+
+  /* Add shadows to create the "card" effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;   
+  border-radius: 5px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container {
+  padding: 2px 16px;
+}
+
+
+/* daily profit line chart */
 .card-chart {
   background: linear-gradient(-45deg, #5555FF, #9787FF);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); 
@@ -99,50 +197,41 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
-
 /* hide limit values on X axis */
 .card-chart #mycanvas {
   margin: 0px 14px;
 }
-
 .card-chart .about {
   height: 150px;
   padding: 20px;
   box-sizing: border-box;
 }
-
 .card-chart .about h3,
 .card-chart .about .lead {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 400;
 }
-
 .card-chart .about h3 {
   font-size: 24px;
   color: #fff;
 }
-
 .card-chart .about .lead {
   color: #eee;
 }
-
 .card-chart .info {
   float: left;
   padding: 10px 30px 10px 0;
 }
-
 .card-chart .info p {
   font-size: 11px;
   color: #aaa;
   font-weight: 300;
 }
-
 .legends {
   padding-top: 20px;
   overflow: hidden;
 }
-
 .legend {
   display: block;
   width: 8px;
@@ -151,15 +240,12 @@ body {
   margin-bottom: 15px;
   border-radius: 50%;
 }
-
 .legend--this {
   background-color: #5555FF;
 }
-
 .legend--prev {
   background-color: #FF55B8;
 }
-
 .axis {
   position: absolute;
   color: #fff;
@@ -169,7 +255,6 @@ body {
   width: 100%;
   bottom: 0;
 }
-
 .axis .tick {
   flex: 1;
   position: relative;
@@ -179,7 +264,6 @@ body {
   padding-bottom: 10px;
   line-height: 20px;
 }
-
 .axis .tick::after {
   content: "";
   position: absolute;
@@ -190,7 +274,6 @@ body {
   height: 200px;
   background: rgba(255, 255, 255, 0.2);
 }
-
 .axis .tick .value {
   transform: translateY(-240px);
   opacity: 0;
@@ -203,32 +286,26 @@ body {
   width: 100%;
   line-height: 20px;
 }
-
 .axis .tick:hover .value.value--this {
   transform: translateY(-160px);
   display: block;
   opacity: 0.4;
 }
-
 .value.value--this {
   color: #fff;
   font-weight: bold;
 }
-
 .day-number {
   display: block;
 }
-
 .day-name {
   display: block;
   opacity: 0.4;
 }
-
 /* Animated background, credits: Manuel Pinto, https://codepen.io/P1N2O/pen/pyBNzX */
 .card-chart {
   background: linear-gradient(-45deg, #5555FF, #9787FF);
 }
-
 @keyframes bg
 {
   0% {

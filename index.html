@@ -8,108 +8,174 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <!-- topbar -->
+    <nav class="navbar navbar-light bg-light align-middle sticky-top">
+        <div class="container-fluid">
+            <span class="margin: 0px 20px">
+                <i class="fa fa-fw fa-bars" onclick="w3_open()"></i>
+            </span>
 
-    <div class="container md:px-5">
-        <div class="row">
-            <div class="border-bottom p-2 fs-4">Dashboard</div>
+            <span class="" style="font-size:14px;">
+                Username
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                    alt="userphoto" style="height: 24px; width: 24px" class="ms-1">
+            </span>
         </div>
-        <div class="row py-3">
-            <div class="col-12 col-md-6 py-2">
-                <div class="card p-2">
-                    <div class="card-body text-center">
-                        <p class="mb-3"><small>Account Total</p></small>
+    </nav>
 
-                        <h3 class="card-title">$<span class="number" akhi="3400.48">0</span></h3>
+    <!-- sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="#home"><i class="fa fa-fw fa-home"></i></a>
+        <a href="#services"><i class="fa fa-fw fa-wrench"></i></a>
+        <a href="#clients"><i class="fa fa-fw fa-user"></i></a>
+        <a href="#contact"><i class="fa fa-fw fa-envelope"></i></a>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+        <div class="px-4">
+            <!-- page title -->
+            <div class="row">
+                <div class="col-12 title pt-4">Market</div>
+            </div>
+
+            <!-- sub pages -->
+            <div class="row">
+                <div class="col-12 pt-4 tap-control">
+                    <span href="#home" class="pb-1 tap active">Market Watch</span>
+                    <span href="#home" class="pb-1 tap">My Watchlist</span>
+                </div>
+            </div>
+
+            <!-- search and sort -->
+            <div class="row">
+                <div class="col-12 pt-5 d-flex justify-content-between">
+                    <div class="search">
+                        <i class="fa fa-fw fa-search"></i>
+                        <input type="text" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                    <div class="dropdown">
+                        <span class="tap">Sort by</span>
+                        <span>
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option value="price" selected>Price (Desc.)</option>
+                                <option value="popular">Popular (Desc.)</option>
+                                <option value="new">New (Desc.)</option>
+                            </select>
+                        </span>
                     </div>
                 </div>
             </div>
-            
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 p-2">
-                <div class="card-chart mx-auto">
-                    <!-- Custom information -->
-                    <div class="about">
-                        <h3>Last 7 Days Profit</h3>
-                        <p class="lead">in USDT</p>
+
+            <!-- market coin table -->
+            <div class="row">
+                <div class="col-12 pt-4">
+                    <table class="table table-hover table-responsive table-striped table-borderless ">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Name</th>
+                                <th>Market Cap</th>
+                                <th>Price</th>
+                                <th>Vol.</th>
+                                <th colspan="3">% Change (24 hr)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2  align-middle" style="width: 5%"><img
+                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                        alt="Avatar">
+                                </td>
+                                <td class="py-2 align-middle" style="width: 15%"><span
+                                        class="tablebold">USDT</span><br><span class="tablesmall">USD Tether</span></td>
+                                <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
+                                <td class="py-2 align-middle" style="width: 20%">
+                                    $923.03798295
+                                </td>
+                                <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
+                                <td class="py-2 align-middle" style="width: 12%">
+                                    <div class="controlchartsize">
+                                        <canvas id="chartforcoin"></canvas>
+                                    </div>
+                                </td>
+                                <td class="py-2 align-middle" style="width: 12%">
+                                    <i class="fa fa-2x fa-sort-up" style="color:#00b053"></i><span>4.08%</span>
+                                </td>                                    
+                                <td class="py-2 align-middle" style="width: 4%; color:grey"><i class="fa fa-2x fa-plus-circle"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row py-3">
+                <div class="col-12 col-md-6 pt-4">
+                    <div class="card p-2">
+                        <div class="card-body text-center">
+                            <p class="mb-3"><small>Account Total</p></small>
+
+                            <h3 class="card-title">$<span class="number" akhi="3400.48">0</span></h3>
+                        </div>
                     </div>
-                    <!-- Canvas for Chart.js -->
-                    <canvas id="mycanvas"></canvas>
-                    <!-- Custom Axis -->
-                    <div class="axis">
-                        <div class="tick">
-                            <span class="day-number">10</span>
-                            <span class="day-name">MON</span>
-                            <span class="value value--this">$26</span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 p-2">
+                    <div class="card-chart mx-auto">
+                        <!-- Custom information -->
+                        <div class="about">
+                            <h3>Last 7 Days Profit</h3>
+                            <p class="lead">in USDT</p>
                         </div>
-                        <div class="tick">
-                            <span class="day-number">11</span>
-                            <span class="day-name">TUE</span>
-                            <span class="value value--this">$14</span>
-                        </div>
-                        <div class="tick">
-                            <span class="day-number">12</span>
-                            <span class="day-name">WED</span>
-                            <span class="value value--this">$22</span>
-                        </div>
-                        <div class="tick">
-                            <span class="day-number">13</span>
-                            <span class="day-name">THU</span>
-                            <span class="value value--this">$12</span>
-                        </div>
-                        <div class="tick">
-                            <span class="day-number">14</span>
-                            <span class="day-name">FRI</span>
-                            <span class="value value--this">$20</span>
-                        </div>
-                        <div class="tick">
-                            <span class="day-number">15</span>
-                            <span class="day-name">SAT</span>
-                            <span class="value value--this">$12</span>
-                        </div>
-                        <div class="tick">
-                            <span class="day-number">16</span>
-                            <span class="day-name">SUN</span>
-                            <span class="value value--this">$18</span>
+                        <!-- Canvas for Chart.js -->
+                        <canvas id="mycanvas"></canvas>
+                        <!-- Custom Axis -->
+                        <div class="axis">
+                            <div class="tick">
+                                <span class="day-number">10</span>
+                                <span class="day-name">MON</span>
+                                <span class="value value--this">$26</span>
+                            </div>
+                            <div class="tick">
+                                <span class="day-number">11</span>
+                                <span class="day-name">TUE</span>
+                                <span class="value value--this">$14</span>
+                            </div>
+                            <div class="tick">
+                                <span class="day-number">12</span>
+                                <span class="day-name">WED</span>
+                                <span class="value value--this">$22</span>
+                            </div>
+                            <div class="tick">
+                                <span class="day-number">13</span>
+                                <span class="day-name">THU</span>
+                                <span class="value value--this">$12</span>
+                            </div>
+                            <div class="tick">
+                                <span class="day-number">14</span>
+                                <span class="day-name">FRI</span>
+                                <span class="value value--this">$20</span>
+                            </div>
+                            <div class="tick">
+                                <span class="day-number">15</span>
+                                <span class="day-name">SAT</span>
+                                <span class="value value--this">$12</span>
+                            </div>
+                            <div class="tick">
+                                <span class="day-number">16</span>
+                                <span class="day-name">SUN</span>
+                                <span class="value value--this">$18</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th style="font-size: 14px" colspan="2">Name</th>
-                            <th style="font-size: 14px">Amount</th>
-                            <th style="font-size: 14px">Value</th>
-                            <th style="font-size: 14px">Allocation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="py-2  align-middle" style="width: 10%"><img
-                                    src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png" alt="Avatar">
-                            </td>
-                            <td class="py-2 lh-base fw-normal align-middle" style="width: 25%">USDT<br /><span
-                                    class="fw-normal mt-2" style="font-size: 14px">USD Tether</span></td>
-                            <td class="py-2 lh-base fw-normal align-middle" style="width: 25%">922.89 USDT</td>
-                            <td class="py-2 lh-base fw-normal align-middle" style="width: 25%">
-                                $923.03798295<br /><span class="fw-normal mt-2" style="font-size: 14px">0.02514397
-                                    BTC</span>
-                            </td>
-                            <td class="py-2 lh-base fw-normal align-middle" style="width: 15%">27.14%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
         </div>
     </div>
 
@@ -120,10 +186,16 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+
+        //sidebar display-hide switch
+        function w3_open() {
+            document.getElementById("sidebar").classList.toggle("hidesidebar");
+        }
+
+
         //number counter (class="number")
         const counters = document.querySelectorAll('.number');
         const speed = 200;
-
         counters.forEach(counter => {
             const animate = () => {
                 const value = +counter.getAttribute('akhi');
@@ -136,14 +208,60 @@
                 } else {
                     counter.innerText = value;
                 }
-
             }
-
             animate();
         });
 
 
-        //line chart
+        //market coin line chart
+        var canvas = document.getElementById("chartforcoin");
+        var config = {
+            type: 'line',
+            data: {
+                labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+                datasets: [
+                    {
+                        label: 'Temperature',
+                        data: [26, 14, 22, 12, 20, 12, 18, 26, 14, 22, 12, 20, 12, 18, 26, 14, 22, 12, 20, 12, 18],
+                        fill: false,
+                        borderColor: "#00b053", //#eb0a25 red
+                        borderWidth: 2,
+                        lineTension: 0.4
+                    }
+                ]
+            },
+            options: {
+                hover: { 
+                    mode: null 
+                },
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                        display: false,
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        enabled: false,
+                    },
+                }
+            },
+        };
+        window.chart = new Chart(canvas, config);
+
+
+        //daily profit line chart
         var canvas = document.getElementById("mycanvas");
         var config = {
             type: 'line',
@@ -208,10 +326,7 @@
                     tension: 0.4,
                 }
             },
-
         };
-
-
         window.chart = new Chart(canvas, config);
     </script>
 </body>
