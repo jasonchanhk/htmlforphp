@@ -1,0 +1,548 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <title>HTML Dashboard</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- topbar -->
+    <nav class="navbar navbar-light bg-light align-middle sticky-top">
+        <div class="container-fluid">
+            <span class="margin: 0px 20px">
+                <i class="fa fa-fw fa-bars" onclick="w3_open()"></i>
+            </span>
+
+            <span class="" style="font-size:14px;">
+                Username
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                    alt="userphoto" style="height: 24px; width: 24px" class="ms-1">
+            </span>
+        </div>
+    </nav>
+
+    <!-- sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="#home"><i class="fa fa-fw fa-home"></i></a>
+        <a href="#services"><i class="fa fa-fw fa-wrench"></i></a>
+        <a href="#clients"><i class="fa fa-fw fa-user"></i></a>
+        <a href="#contact"><i class="fa fa-fw fa-envelope"></i></a>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+        <div class="px-4">
+            <!-- page title -->
+            <div class="row">
+                <div class="col-12 title pt-4">Market</div>
+            </div>
+
+            <!-- sub pages -->
+            <div class="row">
+                <div class="col-12 pt-4 tap-control">
+                    <span href="#home" class="pb-1 tap active me-1">Market Watch</span>
+                    <span href="#home" class="pb-1 tap">My Watchlist</span>
+                </div>
+            </div>
+
+            <!-- search and sort -->
+            <div class="row">
+                <div class="col-12 pt-5 d-flex justify-content-between">
+                    <div class="search">
+                        <i class="fa fa-fw fa-search"></i>
+                        <input type="text" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                    <div class="dropdown">
+                        <span class="tap">Sort by</span>
+                        <span>
+                            <select class="form-select form-select-sm" aria-label="Default select example">
+                                <option value="price" selected>Price (Desc.)</option>
+                                <option value="popular">Popular (Desc.)</option>
+                                <option value="new">New (Desc.)</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- market coin table -->
+            <div class="row">
+                <div class="col-12 mt-4 table-responsive">
+                    <table class="table table-hover table-striped table-borderless ">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Name</th>
+                                <th>Market Cap</th>
+                                <th>Price</th>
+                                <th>Vol.</th>
+                                <th colspan="4">% Change (24 hr)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2  align-middle" style="width: 5%"><img
+                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                        alt="Avatar">
+                                </td>
+                                <td class="py-2 align-middle" style="width: 15%"><span class="fs-6">USDT</span><br><span
+                                        style="color:grey">USD Tether</span></td>
+                                <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
+                                <td class="py-2 align-middle" style="width: 20%">
+                                    $923.03798295
+                                </td>
+                                <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
+                                <td class="py-2 align-middle" style="width: 12%">
+                                    <div class="controlchartsize">
+                                        <canvas id="chartforcoin"></canvas>
+                                    </div>
+                                </td>
+                                <td class="py-2 align-middle pe-0" style="width: 3%">
+                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
+                                </td>
+                                <td class="py-2 align-middle ps-1" style="width: 9%">
+                                    <span style="color:#00b053">4.08%</span>
+                                </td>
+                                <td class="py-2 align-middle" style="width: 4%; color:grey"><i
+                                        class="fa fa-2x fa-plus-circle"></i>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr>
+            <!-- market watch - bitcoin -->
+
+            <!-- page title -->
+            <div class="row">
+                <div class="col-12 title pt-4">Bitcoin</div>
+            </div>
+
+            <!-- sub pages -->
+            <div class="row">
+                <div class="col-12 pt-4 tap-control">
+                    <span href="#home" class="pb-1 tap ">Market Watch</span>>
+                    <span href="#home" class="pb-1 tap">Bitcoin</span>
+                </div>
+            </div>
+
+            <!-- sub pages -->
+            <div class="row">
+                <div class="col-12 pt-4">
+                    <span class="tap">Price</span>
+                </div>
+                <div class="col-12">
+                    <span class="fw-bold fs-1 pe-4">$ 36603.029732995</span>
+                    <i class="fa fa-caret-up pb-1" style="color:#00b053"></i>
+                    <span class="pe-1 fw-bold" style="color:#00b053">4.08%</span>
+                    <span class="tap">% Change (24 hr)</span>
+                </div>
+            </div>
+
+            <!-- basic info -->
+            <div class="row py-3 gx-5">
+                <div class="col-12 col-md-4">
+                    <div class="card p-3">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <i class="fa fa-2x fa-coins px-3 py-4"></i>
+                            </div>
+                            <div class="col-md-9">
+                                <div>
+                                    <p class="tap my-2">Market Cap</p>
+                                    <p class="tap fs-5 mb-0">$693303915863.47</p>
+                                    <p class="tap mb-2">30% of crypto market</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card p-3">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <i class="fa fa-2x fa-coins px-3 py-4"></i>
+                            </div>
+                            <div class="col-md-9">
+                                <div>
+                                    <p class="tap my-2">Market Cap</p>
+                                    <p class="tap fs-5 mb-0">$693303915863.47</p>
+                                    <p class="tap mb-2">30% of crypto market</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card p-3">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <i class="fa fa-2x fa-coins px-3 py-4"></i>
+                            </div>
+                            <div class="col-md-9">
+                                <div>
+                                    <p class="tap my-2">Market Cap</p>
+                                    <p class="tap fs-5 mb-0">$693303915863.47</p>
+                                    <p class="tap mb-2">30% of crypto market</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="row py-3">
+                <div class="col-12 d-flex justify-content-end" style="color:grey">
+                    <div>
+                        <p class="tap">Time</p>
+                        <span class="pe-2 fw-bold">1D</span><span class="pe-2 fw-bold">1M</span><span
+                            class="pe-2 fw-bold">1Y</span><span class="fw-bold active">All time</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 px-4">
+                    <canvas id="chartforcoin2"></canvas>
+                </div>
+            </div>
+
+            <!-- description -->
+            <div class="row">
+                <div class="col-12">
+                    <span class="fw-bold fs-4">About</span>
+                    <p>Bitcoin is the first digital currency that allows users to send and receive money, without the
+                        interference of a central bank or government. Instead, a network of thousands of peers is
+                        controlling the transactions; a decentralized system. Bitcoin’s useful qualities (decentralized,
+                        borderless, secure) aren’t the only reason the coin is worth so much. Due to its scarcity (and
+                        it’s hard to produce), Bitcoin is often nicknamed ‘Digital Gold’, in reference to ‘classic’
+                        physical gold. Like gold, Bitcoin also has a finite supply of coins available; there will only
+                        ever be 21 million bitcoin. And now you know why the creation of new bitcoins is also called
+                        mining.
+                    </p>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <div>
+                        <p class="tap">READ MORE</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- description -->
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <div class="card p-4 me-4" style="width: 18rem">
+                        <div>
+                            <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                            <div style="height: 10rem; background-color: lightgray;"></div>
+                            <p class="tap fs-5 mb-0" style="text-align: justify;">Bitcoin pundits split over BTC floor as Bloomberg analyst eyes
+                                bounce.</p>
+                            <div class="tap" style="color:grey">
+                                <span>5 mins read</span><span class="ps-1">•</span>
+                                <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                <span class="rounded-pill px-2"
+                                    style="background-color: lightgray; color: gray">BTC</span>
+                            </div>
+                            <div class="d-flex justify-content-end pt-4">
+                                <span class="tap">READ MORE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-4 me-4" style="width: 18rem">
+                        <div>
+                            <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                            <div style="height: 10rem; background-color: lightgray;"></div>
+                            <p class="tap fs-5 mb-0" style="text-align: justify;">Bitcoin pundits split over BTC floor as Bloomberg analyst eyes
+                                bounce.</p>
+                            <div class="tap" style="color:grey">
+                                <span>5 mins read</span><span class="ps-1">•</span>
+                                <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                <span class="rounded-pill px-2"
+                                    style="background-color: lightgray; color: gray">BTC</span>
+                            </div>
+                            <div class="d-flex justify-content-end pt-4">
+                                <span class="tap">READ MORE</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-12 col-md-6 p-2">
+            <div class="card-chart mx-auto">
+                <!-- Custom information -->
+                <div class="about">
+                    <h3>Last 7 Days Profit</h3>
+                    <p class="lead">in USDT</p>
+                </div>
+                <!-- Canvas for Chart.js -->
+                <canvas id="mycanvas"></canvas>
+                <!-- Custom Axis -->
+                <div class="axis">
+                    <div class="tick">
+                        <span class="day-number">10</span>
+                        <span class="day-name">MON</span>
+                        <span class="value value--this">$26</span>
+                    </div>
+                    <div class="tick">
+                        <span class="day-number">11</span>
+                        <span class="day-name">TUE</span>
+                        <span class="value value--this">$14</span>
+                    </div>
+                    <div class="tick">
+                        <span class="day-number">12</span>
+                        <span class="day-name">WED</span>
+                        <span class="value value--this">$22</span>
+                    </div>
+                    <div class="tick">
+                        <span class="day-number">13</span>
+                        <span class="day-name">THU</span>
+                        <span class="value value--this">$12</span>
+                    </div>
+                    <div class="tick">
+                        <span class="day-number">14</span>
+                        <span class="day-name">FRI</span>
+                        <span class="value value--this">$20</span>
+                    </div>
+                    <div class="tick">
+                        <span class="day-number">15</span>
+                        <span class="day-name">SAT</span>
+                        <span class="value value--this">$12</span>
+                    </div>
+                    <div class="tick">
+                        <span class="day-number">16</span>
+                        <span class="day-name">SUN</span>
+                        <span class="value value--this">$18</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card p-2">
+        <div class="card-body">
+            <p class="mb-3"><small>Account Total</p></small>
+
+            <h3 class="card-title">$<span class="number" akhi="3400.48">0</span></h3>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        //sidebar display-hide switch
+        function w3_open() {
+            document.getElementById("sidebar").classList.toggle("hidesidebar");
+        }
+
+
+        //number counter (class="number")
+        const counters = document.querySelectorAll('.number');
+        const speed = 200;
+        counters.forEach(counter => {
+            const animate = () => {
+                const value = +counter.getAttribute('akhi');
+                const data = +counter.innerText;
+
+                const time = value / speed;
+                if (data < value) {
+                    counter.innerText = Math.ceil(data + time);
+                    setTimeout(animate, 1);
+                } else {
+                    counter.innerText = value;
+                }
+            }
+            animate();
+        });
+
+
+        //market coin line chart
+        var canvas = document.getElementById("chartforcoin");
+        var config = {
+            type: 'line',
+            data: {
+                labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+                datasets: [
+                    {
+                        label: 'Temperature',
+                        data: [26, 14, 22, 12, 20, 12, 18, 26, 14, 22, 12, 20, 12, 18, 26, 14, 22, 12, 20, 12, 18],
+                        fill: false,
+                        borderColor: "#00b053", //#eb0a25 red
+                        borderWidth: 2,
+                        lineTension: 0.4
+                    }
+                ]
+            },
+            options: {
+                hover: {
+                    mode: null
+                },
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                        display: false,
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        enabled: false,
+                    },
+                }
+            },
+        };
+        window.chart = new Chart(canvas, config);
+
+        //market coin line chart
+        var canvas2 = document.getElementById("chartforcoin2");
+        var config2 = {
+            type: 'line',
+            data: {
+                labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+                datasets: [
+                    {
+                        label: 'Temperature',
+                        data: [26, 12, 18, 26, 14, 22, 12, 20, 12, 18, 26, 14, 14, 22, 12, 20, 22, 12, 20, 12, 18],
+                        fill: false,
+                        borderColor: "#000", //#eb0a25 red
+                        borderWidth: 2,
+                        lineTension: 0.4
+                    }
+                ]
+            },
+            options: {
+                hover: {
+                    mode: null
+                },
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                        display: false,
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        enabled: false,
+                    },
+                }
+            },
+        };
+        window.chart = new Chart(canvas2, config2);
+
+        //daily profit line chart
+        var canvas1 = document.getElementById("mycanvas");
+        var config1 = {
+            type: 'line',
+            data: {
+                labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+                datasets: [
+                    {
+                        label: 'Temperature',
+                        data: [26, 14, 22, 12, 20, 12, 18],
+                        fill: false,
+                        borderColor: 'rgba(255, 255, 255, 0.2)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'transparent',
+                        pointBorderColor: '#FFFFFF',
+                        pointBorderWidth: 3,
+                        pointHoverBorderColor: 'rgba(255, 255, 255, 0.2)',
+                        pointHoverBorderWidth: 10,
+                        lineTension: 0,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 6,
+                        hitRadius: 6,
+                        hoverRadius: 6
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                    },
+                    y: {
+                        display: false,
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(25,25,0,0)',
+                        displayColors: false,
+                        bodyFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        callbacks: {
+                            label: function (context) {
+                                var value = context.parsed.y
+                                return '$' + value;
+                            }
+                        }
+                    },
+                    tension: 0.4,
+                }
+            },
+        };
+        window.chart = new Chart(canvas1, config1);
+    </script>
+</body>
+
+</html>
