@@ -10,6 +10,11 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Sarabun:wght@700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -20,7 +25,7 @@
                 <i class="fa fa-fw fa-bars" onclick="w3_open()"></i>
             </span>
 
-            <span class="" style="font-size:14px;">
+            <span class="username" style="font-size:14px;">
                 Username
                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
                     alt="userphoto" style="height: 24px; width: 24px" class="ms-1">
@@ -39,6 +44,51 @@
     <!-- content -->
     <div class="content">
         <div class="px-4">
+
+            <!-- bot page -->
+
+            <!-- page title -->
+            <div class="row">
+                <div class="col-12 title pt-4">Bot</div>
+            </div>
+
+            <!-- sub pages -->
+            <div class="row">
+                <div class="col-12 pt-2 tap-control">
+                    <span href="#home" class="tap me-2 active">ACTIVE</span>
+                    <span href="#home" class="tap me-2">IN PROGRESS</span>
+                    <span href="#home" class="tap">INACTIVE</span>
+                </div>
+            </div>
+
+            <!-- page title -->
+            <div class="row">
+                <div class="col-12 pt-4">
+                    <div class="filter">
+                        <div class="filter-top d-flex justify-content-between">
+                            <div>
+                                <span class="tap align-top">FILTER</span>
+                                <img style="height: 20px; width: 20px;" src="filter.png" alt="removefilter" >
+                            </div>
+                            <div class="text-center">
+                                <img style="height: 15px; width: 30px" src="1178604.png" alt="showrestfilter" type="button" data-bs-toggle="collapse"
+                                class="my-1" data-bs-target="#collapseExample">
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseExample">
+                            <div class="filter-bottom ">
+                                Some placeholder content for the collapse component. This panel is hidden by default but
+                                revealed when the user activates the relevant trigger.
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- market page -->
             <!-- page title -->
             <div class="row">
                 <div class="col-12 title pt-4">Market</div>
@@ -47,8 +97,8 @@
             <!-- sub pages -->
             <div class="row">
                 <div class="col-12 pt-4 tap-control">
-                    <span href="#home" class="pb-1 tap active me-1">Market Watch</span>
-                    <span href="#home" class="pb-1 tap">My Watchlist</span>
+                    <span href="#home" class="tap active me-1">Market Watch</span>
+                    <span href="#home" class="tap">My Watchlist</span>
                 </div>
             </div>
 
@@ -130,8 +180,8 @@
             <!-- sub pages -->
             <div class="row">
                 <div class="col-12 pt-4 tap-control">
-                    <span href="#home" class="pb-1 tap ">Market Watch</span>>
-                    <span href="#home" class="pb-1 tap">Bitcoin</span>
+                    <span href="#home" class="tap">Market Watch</span>>
+                    <span href="#home" class="tap">Bitcoin</span>
                 </div>
             </div>
 
@@ -376,6 +426,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 

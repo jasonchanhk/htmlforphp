@@ -1,6 +1,17 @@
 /* topbar */
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
 .navbar{
-  height: 60px;
+  height: 60px;  
+  background-color: white;
+  border: 2px solid black;
 }
 /* topbar padding*/
 .navbar .container-fluid {
@@ -8,7 +19,7 @@
   padding-left: 27px;
 }
 /* topbar */
-img {
+.username img {
   border-radius: 50%;
   width: 40px;
 }
@@ -20,7 +31,9 @@ img {
   margin: 0;
   padding: 0;
   width: 76px;
-  background-color: #f8f9fa;
+  background-color: white;
+  border: 2px solid black;
+  border-top: 0px;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -57,7 +70,8 @@ img {
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
   margin-left: 76px;
-  padding: 24px;
+  padding: 36px;
+  background-color: #f1fcff;
 }
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
@@ -87,18 +101,21 @@ div.content {
 
 /* title on page head */
 .title{
-  font-size: x-large;
+  font-size: 70px;
   font-weight: bolder;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 
 /* tap control with underline */
 .tap{
-  font-size: x-small;
-  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Sarabun', sans-serif;
+  line-height: 21px;
+  letter-spacing: 0.1em;
 }
 .active{  
-  border-bottom: 1px solid black;
+  border-bottom: 5px solid black;
   color: black;
   padding-bottom: 4px;
 }
@@ -188,6 +205,27 @@ table img {
 }
 .container {
   padding: 2px 16px;
+}
+
+/* bot page filter */
+.filter{
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+.filter-top{
+  background: #F9F9FF;
+  padding-top: 21px;
+  padding-left: 28px;
+  padding-bottom: 23px;
+  padding-right: 22px;
+  border-radius: 12px;
+
+}
+.filter-bottom{
+  padding: 20px;
+  background-color: white;  
+  border-radius: 0px 0px 12px 12px;
 }
 
 
