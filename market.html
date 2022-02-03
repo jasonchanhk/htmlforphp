@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Sarabun:wght@700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Sarabun:wght@500;700&display=swap"
         rel="stylesheet">
 
 </head>
@@ -67,25 +68,231 @@
                     <div class="filter">
                         <div class="filter-top d-flex justify-content-between">
                             <div>
-                                <span class="tap align-top">FILTER</span>
-                                <img style="height: 20px; width: 20px;" src="filter.png" alt="removefilter" >
+                                <span class="tap align-middle">FILTER <img class="mb-1"
+                                        style="height: 18px; width: 18px" src="filter.png" alt="removefilter"></span>
                             </div>
                             <div class="text-center">
-                                <img style="height: 15px; width: 30px" src="1178604.png" alt="showrestfilter" type="button" data-bs-toggle="collapse"
-                                class="my-1" data-bs-target="#collapseExample">
+                                <img style="height: 16px; width: 28px" src="1178604.png" alt="showrestfilter"
+                                    type="button" data-bs-toggle="collapse" class="my-1"
+                                    data-bs-target="#collapseExample">
                             </div>
                         </div>
                         <div class="collapse" id="collapseExample">
-                            <div class="filter-bottom ">
-                                Some placeholder content for the collapse component. This panel is hidden by default but
-                                revealed when the user activates the relevant trigger.
+                            <div class="filter-bottom">
+                                <div class="row">
+                                    <div class="col-12 col-md-3" style="position: relative;">
+                                        <p class="tap">Bot Type</p>
+                                        <div class="filter" style="background: #EEEEFF">
+                                            <div class="subfilter-top d-flex justify-content-between">
+                                                <div>
+                                                    <span class="tap align-top">All Bots </span>
+                                                </div>
+                                                <div class="text-center">
+                                                    <img style="height: 8px; width: 16px" src="1178604.png"
+                                                        alt="showrestfilter" type="button" data-bs-toggle="collapse"
+                                                        class="mt-2" data-bs-target="#collapsebottype">
+                                                </div>
+                                            </div>
+                                            <div class="collapse" id="collapsebottype">
+                                                <div class="subfilter-bottom">
+                                                    <span class="tap filterblock"
+                                                        style="border-top: 2px solid black;">Bitcoin Bot</span>
+                                                    <span class="tap filterblock">Ethereum Bot</span>
+                                                    <span class="tap filterblock">RSI Bot</span>
+                                                    <span class="tap filterblock"
+                                                        style="border-radius: 0px 0px 12px 12px;;">DCA
+                                                        Bot</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-3" style="position: relative;">
+                                        <p class="tap">Pairs</p>
+                                        <div class="filter" style="background: #EEEEFF">
+                                            <div class="subfilter-top d-flex justify-content-between">
+                                                <div>
+                                                    <span class="tap align-top">All Pairs </span>
+                                                </div>
+                                                <div class="text-center">
+                                                    <img style="height: 8px; width: 16px" src="1178604.png"
+                                                        alt="showrestfilter" type="button" data-bs-toggle="collapse"
+                                                        class="mt-2" data-bs-target="#collapsepairs">
+                                                </div>
+                                            </div>
+                                            <div class="collapse" id="collapsepairs">
+                                                <div class="subfilter-bottom">
+                                                    <span class="tap filterblock"
+                                                        style="border-top: 2px solid black;">Bitcoin Bot</span>
+                                                    <span class="tap filterblock">Ethereum Bot</span>
+                                                    <span class="tap filterblock">RSI Bot</span>
+                                                    <span class="tap filterblock"
+                                                        style="border-radius: 0px 0px 12px 12px;;">DCA
+                                                        Bot</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <p class="tap">Strategy</p>
+                                        <div class="row gx-3 text-center">
+                                            <div class="col-2">
+                                                <div class="filterbutton" style="background: #EEEEFF;">
+                                                    <div class="subfilter-top">
+                                                        <div>
+                                                            <span class="tap align-top">All</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="filterbutton"
+                                                    style="background: #FFFCDD; border-color: #8E810D;color: #8E810D">
+                                                    <div class="subfilter-top">
+                                                        <div>
+                                                            <span class="tap align-top">Conservative</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="filterbutton"
+                                                    style="background: #FFE4CC; border-color: #995C25;color: #995C25">
+                                                    <div class="subfilter-top">
+                                                        <div>
+                                                            <span class="tap align-top">Moderate</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="filterbutton"
+                                                    style="background: #FFD3D3; border-color: #961414;color: #961414">
+                                                    <div class="subfilter-top">
+                                                        <div>
+                                                            <span class="tap align-top">Aggressive</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
 
+            <!-- date and sort -->
+            <div class="row">
+                <div class="col-12 pt-5 d-flex justify-content-end" style="color:grey; position:relative">
+
+                    <span class="tap" style="padding: 12px 20px 8px 20px; color: black;">TIME</span>
+                    <div>
+                        <div class="filter" style="background-color: #EEEEFF">
+                            <span class="tap timeblock" style="border-left: 0px;">1D</span>
+                            <span class="tap timeblock">1M</span>
+                            <span class="tap timeblock">1Y</span>
+                            <span class="tap timeblock timeactive">All Time</span>
+                        </div>
+                    </div>
+                    <span class="tap" style="padding: 12px 170px 8px 20px; color: black">SORT BY</span>
+                    <div class="filter" style="background: #EEEEFF; color: black; width: 150px; position: absolute">
+                        <div class="subfilter-top d-flex justify-content-between">
+                            <div>
+                                <span class="tap align-top">All Bots </span>
+                            </div>
+                            <div class="text-center">
+                                <img style="height: 8px; width: 16px" src="1178604.png" alt="showrestfilter"
+                                    type="button" data-bs-toggle="collapse" class="mt-2"
+                                    data-bs-target="#collapsecriteria">
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapsecriteria">
+                            <div class="subfilter-bottom">
+                                <span class="tap filterblock" style="border-top: 2px solid black;">Price</span>
+                                <span class="tap filterblock">Performance</span>
+                                <span class="tap filterblock">Popularity</span>
+                                <span class="tap filterblock" style="border-radius: 0px 0px 12px 12px;;">New
+                                    Bot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- market coin table -->
+            <div class="row">
+                <div class="col-12 mt-4 table-responsive">
+                    <table class="table table-hover table-striped table-borderless ">
+                        <thead>
+                            <tr class="tap">
+                                <th>Bot</th>
+                                <th>Coin</th>
+                                <th>Realised Profit</th>
+                                <th colspan="2">Performance</th>
+                                <th >Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2  align-middle" style="width: 5%;"><img
+                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                        alt="Avatar">
+                                </td>
+                                <td class="py-2 align-middle" style="width: 15%"><span class="fs-6">USDT</span><br><span
+                                        style="color:grey">USD Tether</span></td>
+                                <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
+                                <td class="py-2 align-middle" style="width: 20%">
+                                    $923.03798295
+                                </td>
+                                <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
+                                <td class="py-2 align-middle" style="width: 12%">
+                                    <div class="controlchartsize">
+                                        <canvas id="chartforcoin"></canvas>
+                                    </div>
+                                </td>
+                                <td class="py-2 align-middle pe-0" style="width: 3%">
+                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
+                                </td>
+                                <td class="py-2 align-middle ps-1" style="width: 9%">
+                                    <span style="color:#00b053">4.08%</span>
+                                </td>
+                                <td class="py-2 align-middle" style="width: 4%; color:grey;"><i
+                                        class="fa fa-2x fa-plus-circle"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-2  align-middle" style="width: 5%;"><img
+                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                        alt="Avatar">
+                                </td>
+                                <td class="py-2 align-middle" style="width: 15%"><span class="fs-6">USDT</span><br><span
+                                        style="color:grey">USD Tether</span></td>
+                                <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
+                                <td class="py-2 align-middle" style="width: 20%">
+                                    $923.03798295
+                                </td>
+                                <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
+                                <td class="py-2 align-middle" style="width: 12%">
+                                    <div class="controlchartsize">
+                                        <canvas id="chartforcoin"></canvas>
+                                    </div>
+                                </td>
+                                <td class="py-2 align-middle pe-0" style="width: 3%">
+                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
+                                </td>
+                                <td class="py-2 align-middle ps-1" style="width: 9%">
+                                    <span style="color:#00b053">4.08%</span>
+                                </td>
+                                <td class="py-2 align-middle" style="width: 4%; color:grey;"><i
+                                        class="fa fa-2x fa-plus-circle"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <hr>
 
             <!-- market page -->

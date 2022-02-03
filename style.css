@@ -72,6 +72,9 @@ div.content {
   margin-left: 76px;
   padding: 36px;
   background-color: #f1fcff;
+  font-size: 16px;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 700;
 }
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
@@ -109,8 +112,6 @@ div.content {
 
 /* tap control with underline */
 .tap{
-  font-size: 16px;
-  font-family: 'Sarabun', sans-serif;
   line-height: 21px;
   letter-spacing: 0.1em;
 }
@@ -145,39 +146,19 @@ div.content {
 }
 
 
-/* dropdown selction */
-.dropdown{
-  width: 200px
-}
-.dropdown .form-select-sm{
-  border-radius: 10px;
-  background-color:  rgb(231, 231, 231);
-  color: grey;
-  border-width: 0;  
-  font-weight: bolder;
-  font-size: 12px;
-  width: 100px;
-  display: inline-block
-}
-
-
 /* market coin table */
-body table{
-  font-size: 12px;
-  font-weight: bold;
+
+table tr:first-child td:first-child {
+  border-top-left-radius: 10px;
 }
-.tablebold{
-  font-weight: bolder;
+table tr:first-child td:last-child {
+  border-top-right-radius: 10px;
 }
-.tablesmall{
-  font-weight: lighter;
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
 }
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: whitesmoke;
-}
-table.table-borderless td,
-table.table-borderless th {
-    border: 0;
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
 table img {
   border-radius: 50%;
@@ -213,8 +194,17 @@ table img {
   box-sizing: border-box;
   border-radius: 12px;
 }
+.filterbutton{
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+.filter-bottom .filter{
+  position: absolute;
+  width: 270px;
+}
 .filter-top{
-  background: #F9F9FF;
+  background-color: #F9F9FF;
   padding-top: 21px;
   padding-left: 28px;
   padding-bottom: 23px;
@@ -226,6 +216,30 @@ table img {
   padding: 20px;
   background-color: white;  
   border-radius: 0px 0px 12px 12px;
+}
+.subfilter-top{
+  border-radius: 12px;
+  padding: 10px 20px 10px 20px 
+}
+.subfilter-bottom{
+  border-radius: 0px 0px 12px 12px;
+  font-weight: 500;
+}
+.filterblock{
+  display: block;  
+  padding: 10px 10px 10px 20px 
+}
+.filterblock:hover{
+  background-color: #D5D5ED;
+  font-weight: 700;
+}
+.timeblock{
+  padding: 10px 20px;
+  border-left: 2px solid #000000;
+  display: inline-block;
+}
+.timeactive{
+  color: black;
 }
 
 
