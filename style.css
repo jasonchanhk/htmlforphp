@@ -146,12 +146,28 @@ div.content {
 }
 
 
-/* market coin table */
 
-table tr:first-child td:first-child {
+/* market coin table */
+tr:nth-child(even){
+  background-color: #F9F9FF;
+}
+td {
+  padding: 20px 25px !important;
+  font-size: 25px;
+  vertical-align: middle;
+}
+thead{
+  background-color: #F9F9FF !important;
+  border-bottom: 2px solid black!important;
+}
+th{
+  padding: 25px !important;  
+  vertical-align: middle;
+}
+table tr:first-child th:first-child{  
   border-top-left-radius: 10px;
 }
-table tr:first-child td:last-child {
+table tr:first-child th:last-child{  
   border-top-right-radius: 10px;
 }
 table tr:last-child td:first-child {
@@ -164,24 +180,32 @@ table img {
   border-radius: 50%;
   width: 30px;
 }
-.controlchartsize{
-  width: 80px;
-  height: 40px
+#chartforcoin{
+  width: 200px !important;
+  height: 40px !important;
 }
 .fa-plus-circle .fa-sort-up {
   font-size: 16px;
 }
+.highlighter{
+  height: 10px; 
+  width: 40px; 
+  border-radius: 12px;
+}
 
-
+.card-table{
+  border-radius: 10px !important;
+  border: 2px solid black !important;
+}
   /* Add shadows to create the "card" effect */
-.card{
+.card-info{
     padding: 1.5em .5em .5em;
     border-radius: 10px!important;
     border: none!important;
     border-color: transparent!important;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
-.card:hover {
+.card-info:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .container {
@@ -192,6 +216,7 @@ table img {
 .filter{
   border: 2px solid #000000;
   box-sizing: border-box;
+  -webkit-border-radius: 12px;
   border-radius: 12px;
 }
 .filterbutton{
@@ -201,6 +226,7 @@ table img {
 }
 .filter-bottom .filter{
   position: absolute;
+  z-index: 9999;
   width: 270px;
 }
 .filter-top{
@@ -391,4 +417,70 @@ table img {
 .carousel-inner .carousel-item-end,
 .carousel-inner .carousel-item-start { 
 transform: translateX(0);
+}
+
+/* switch */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  border: 2px solid black;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  border: 2px solid black;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  border: 2px solid black;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: -5px;
+  bottom: -5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4E9E7E;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4E9E7E;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

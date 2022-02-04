@@ -64,7 +64,7 @@
 
             <!-- page title -->
             <div class="row">
-                <div class="col-12 pt-4">
+                <div class="col-12 pt-5">
                     <div class="filter">
                         <div class="filter-top d-flex justify-content-between">
                             <div>
@@ -197,7 +197,7 @@
                         </div>
                     </div>
                     <span class="tap" style="padding: 12px 170px 8px 20px; color: black">SORT BY</span>
-                    <div class="filter" style="background: #EEEEFF; color: black; width: 150px; position: absolute">
+                    <div class="filter" style="background: #EEEEFF; color: black; width: 150px; position: absolute; z-index: 9999;">
                         <div class="subfilter-top d-flex justify-content-between">
                             <div>
                                 <span class="tap align-top">All Bots </span>
@@ -223,75 +223,84 @@
 
             <!-- market coin table -->
             <div class="row">
-                <div class="col-12 mt-4 table-responsive">
-                    <table class="table table-hover table-striped table-borderless ">
-                        <thead>
-                            <tr class="tap">
-                                <th>Bot</th>
-                                <th>Coin</th>
-                                <th>Realised Profit</th>
-                                <th colspan="2">Performance</th>
-                                <th >Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="py-2  align-middle" style="width: 5%;"><img
-                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
-                                        alt="Avatar">
-                                </td>
-                                <td class="py-2 align-middle" style="width: 15%"><span class="fs-6">USDT</span><br><span
-                                        style="color:grey">USD Tether</span></td>
-                                <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
-                                <td class="py-2 align-middle" style="width: 20%">
-                                    $923.03798295
-                                </td>
-                                <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
-                                <td class="py-2 align-middle" style="width: 12%">
-                                    <div class="controlchartsize">
-                                        <canvas id="chartforcoin"></canvas>
-                                    </div>
-                                </td>
-                                <td class="py-2 align-middle pe-0" style="width: 3%">
-                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
-                                </td>
-                                <td class="py-2 align-middle ps-1" style="width: 9%">
-                                    <span style="color:#00b053">4.08%</span>
-                                </td>
-                                <td class="py-2 align-middle" style="width: 4%; color:grey;"><i
-                                        class="fa fa-2x fa-plus-circle"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-2  align-middle" style="width: 5%;"><img
-                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
-                                        alt="Avatar">
-                                </td>
-                                <td class="py-2 align-middle" style="width: 15%"><span class="fs-6">USDT</span><br><span
-                                        style="color:grey">USD Tether</span></td>
-                                <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
-                                <td class="py-2 align-middle" style="width: 20%">
-                                    $923.03798295
-                                </td>
-                                <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
-                                <td class="py-2 align-middle" style="width: 12%">
-                                    <div class="controlchartsize">
-                                        <canvas id="chartforcoin"></canvas>
-                                    </div>
-                                </td>
-                                <td class="py-2 align-middle pe-0" style="width: 3%">
-                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
-                                </td>
-                                <td class="py-2 align-middle ps-1" style="width: 9%">
-                                    <span style="color:#00b053">4.08%</span>
-                                </td>
-                                <td class="py-2 align-middle" style="width: 4%; color:grey;"><i
-                                        class="fa fa-2x fa-plus-circle"></i>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-12 mt-4">                    
+                    <div class="card card-table" >
+                        <table class="table table-hover table-borderless mb-0">
+                            <thead>
+                                <tr class="tap">
+                                    <th>Bot</th>
+                                    <th>Coin</th>
+                                    <th class="text-center">Trading Amount</th>
+                                    <th class="text-center">Realised Profit</th>
+                                    <th colspan="3">Performance</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="position-relative" style="width: 15%">
+                                        <div class="highlighter" style="background: #B4A200;"></div>
+                                        Tanjiro
+                                    </td>
+                                    <td class="" style="width: 5%;"><img
+                                            src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                            alt="Avatar">
+                                    </td>
+                                    <td class="text-center" style="width: 20%">$2132</td>
+                                    <td class="text-center" style="width: 20%">$332</td>
+                                    <td class="" style="width: 16%">
+                                        <div>
+                                            <canvas id="chartforcoin"></canvas>
+                                        </div>
+                                    </td>
+                                    <td class="px-0" style="width: 4%; text-align: right;">
+                                        <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053;"></i>
+                                    </td>
+                                    <td class=" ps-1" style="width: 10%; color:#00b053">
+                                        4.08%
+                                    </td>
+                                    <td class="" style="width: 10%;">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="position-relative" style="width: 15%">
+                                        <div class="highlighter" style="background: #B4A200;"></div>
+                                        Tanjiro
+                                    </td>
+                                    <td class="" style="width: 5%;"><img
+                                            src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                            alt="Avatar">
+                                    </td>
+                                    <td class="text-center" style="width: 20%">$2132</td>
+                                    <td class="text-center" style="width: 20%">$332</td>
+                                    <td class="pt-0 pb-2" style="width: 16%">
+                                        <div class="controlchartsize">
+                                            <canvas id="chartforcoin"></canvas>
+                                        </div>
+                                    </td>
+                                    <td class="px-0" style="width: 4%; text-align: right;">
+                                        <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
+                                    </td>
+                                    <td class=" ps-1" style="width: 10%; color:#00b053">
+                                        4.08%
+                                    </td>
+                                    <td class="" style="width: 10%;">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                            <span class="innerslider round"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
             </div>
             <hr>
 
@@ -408,7 +417,7 @@
             <!-- basic info -->
             <div class="row py-3 gx-5">
                 <div class="col-12 col-md-4">
-                    <div class="card p-3">
+                    <div class="card card-info p-3">
                         <div class="row">
                             <div class="col-md-3">
                                 <i class="fa fa-2x fa-coins px-3 py-4"></i>
@@ -424,7 +433,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="card p-3">
+                    <div class="card card-info p-3">
                         <div class="row">
                             <div class="col-md-3">
                                 <i class="fa fa-2x fa-coins px-3 py-4"></i>
@@ -440,7 +449,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="card p-3">
+                    <div class="card card-info p-3">
                         <div class="row">
                             <div class="col-md-3">
                                 <i class="fa fa-2x fa-coins px-3 py-4"></i>
@@ -503,7 +512,7 @@
                     <div class="swiper mySwiper px-3">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="card py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
                                     <div>
                                         <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
                                         <div style="height: 10rem; background-color: lightgray;"></div>
@@ -524,7 +533,7 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="card py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
                                     <div>
                                         <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
                                         <div style="height: 10rem; background-color: lightgray;"></div>
@@ -545,7 +554,7 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="card py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
                                     <div>
                                         <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
                                         <div style="height: 10rem; background-color: lightgray;"></div>
@@ -566,7 +575,7 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="card py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
                                     <div>
                                         <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
                                         <div style="height: 10rem; background-color: lightgray;"></div>
@@ -587,7 +596,7 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="card py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
                                     <div>
                                         <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
                                         <div style="height: 10rem; background-color: lightgray;"></div>
@@ -608,7 +617,7 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="card py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
                                     <div>
                                         <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
                                         <div style="height: 10rem; background-color: lightgray;"></div>
@@ -695,7 +704,7 @@
             </div>
         </div>
     </div>
-    <div class="card p-2">
+    <div class="card card-info p-2">
         <div class="card-body">
             <p class="mb-3"><small>Account Total</p></small>
 
@@ -751,7 +760,7 @@
                         data: [26, 14, 22, 12, 20, 12, 18, 26, 14, 22, 12, 20, 12, 18, 26, 14, 22, 12, 20, 12, 18],
                         fill: false,
                         borderColor: "#00b053", //#eb0a25 red
-                        borderWidth: 2,
+                        borderWidth: 4,
                         lineTension: 0.4
                     }
                 ]
@@ -902,7 +911,7 @@
         };
         window.chart = new Chart(canvas1, config1);
 
-        //card swiper for coin related news
+        //card card-info swiper for coin related news
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,
