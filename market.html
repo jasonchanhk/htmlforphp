@@ -46,11 +46,97 @@
     <div class="content">
         <div class="px-4">
 
-            <!-- bot page -->
-
+            <!-- Create bot page -->
             <!-- page title -->
             <div class="row">
-                <div class="col-12 title pt-4">Bot</div>
+                <div class="col-12 title pt-4">Create Bot</div>
+            </div>
+
+            <!-- sub pages -->
+            <div class="row">
+                <div class="col-12 pt-4 tap-control">
+                    <span href="#home" class="tap">Bots</span>>
+                    <span href="#home" class="tap">Select Bots</span>
+                </div>
+            </div>
+
+            <!-- progress bar -->
+            <div class="row ">
+                <div class="col-12">
+                    <div class="position-relative my-4 mx-auto d-flex justify-content-center progressbar">
+                        <hr class="progressbarhr">
+                        <hr class="progressbarhr">
+                        <button type="button"
+                            class="position-absolute top-50 start-0 translate-middle stepbutton selected">1</button>
+                        <button type="button"
+                            class="position-absolute top-50 start-50 translate-middle stepbutton">2</button>
+                        <button type="button"
+                            class="position-absolute top-50 start-100  translate-middle stepbutton">3</button>
+                    </div>
+                    <div class="position-relative m-4 mx-auto progressbartext">
+                        <span type="button"
+                            class="position-absolute top-50 start-0 translate-middle steptext text-center tap">SELECT<br>BOT</span>
+                        <span type="button"
+                            class="position-absolute top-50 start-50 translate-middle steptext text-center tap">TRADING<br>AMOUNT</span>
+                        <span type="button"
+                            class="position-absolute top-50 start-100  translate-middle steptext text-center tap">CHECK<br>SUBMISSION</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card for bot -->
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="filter"
+                        style="width: 400px; border: 2px solid #57AE95; box-shadow: 4px 4px 0px #57AE95; background-color: white;">
+                        <div class="d-flex justify-content-between"
+                            style="padding: 33px 24px; border-bottom: 2px solid #57AE95; background: #CFFDF0; border-radius: 12px 12px 0px 0px">
+                            <span class="tap align-middle" style="font-size: 37px; color: #439A81;">Tanjiro</span>
+                            <div style="position: relative; display: inline-block; width: 38px">
+                                <span
+                                    style="border-radius: 34px; height: 38px; width: 38px; border: 2px solid black; position: absolute; top: -9px; left:-9px; background-color: white;">
+                                </span>
+                                <span style="border-radius: 34px; height: 20px; width: 20px; border: 2px solid black; position: absolute; background-color: 
+                                #4E9E7E;"> </span>
+                            </div>
+                        </div>
+                        <div style="padding: 20px; ">
+                            <span class="badge rounded-pill tap"
+                                style="background-color: #FFD6B0; color: #CC782B; font-size: 16px;">Moderate</span>
+                            <div>
+                                <canvas id="chartforcoin2" class="mx-auto"
+                                    style="margin-top: 30px; margin-bottom: 30px;"></canvas>
+                            </div>
+                            <div class="text-center d-flex flex-row  justify-content-center">
+                                <div class="pe-3">
+                                    <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
+                                    <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                            alt="Avatar" style="width: 35px;"></div>
+                                </div>
+                                <div>
+                                    <div class="ps-3 tap" style="color: gray; padding-bottom: 5px;">PERFORMANCE <i
+                                            class="fa fa-fw fa-question-circle"></i></div>
+                                    <div class="ps-3"
+                                        style="font-size: 37px; color: #23C992; line-height: 40px; border-left: 1px solid #919191;">
+                                        76.42%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end pt-5" style="color: #57AE95;">
+                                <span class="tap" style="line-height: 16px;">READ MORE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- bot page -->
+            <!-- page title -->
+            <div class="row">
+                <div class="col-12 title pt-4 d-flex justify-content-between">
+                    <span>Bot</span>
+                    <span class="createbot my-auto">CREATE BOTS<i class="fa fa-fw fa-plus"></i></span>
+                </div>
             </div>
 
             <!-- sub pages -->
@@ -62,7 +148,7 @@
                 </div>
             </div>
 
-            <!-- page title -->
+            <!-- filter -->
             <div class="row">
                 <div class="col-12 pt-5">
                     <div class="filter">
@@ -100,7 +186,7 @@
                                                     <span class="tap filterblock">Ethereum Bot</span>
                                                     <span class="tap filterblock">RSI Bot</span>
                                                     <span class="tap filterblock"
-                                                        style="border-radius: 0px 0px 12px 12px;;">DCA
+                                                        style="border-radius: 0px 0px 12px 12px;">DCA
                                                         Bot</span>
                                                 </div>
                                             </div>
@@ -197,7 +283,8 @@
                         </div>
                     </div>
                     <span class="tap" style="padding: 12px 170px 8px 20px; color: black">SORT BY</span>
-                    <div class="filter" style="background: #EEEEFF; color: black; width: 150px; position: absolute; z-index: 9999;">
+                    <div class="filter"
+                        style="background: #EEEEFF; color: black; width: 150px; position: absolute; z-index: 9999;">
                         <div class="subfilter-top d-flex justify-content-between">
                             <div>
                                 <span class="tap align-top">All Bots </span>
@@ -223,8 +310,8 @@
 
             <!-- market coin table -->
             <div class="row">
-                <div class="col-12 mt-4">                    
-                    <div class="card card-table" >
+                <div class="col-12 mt-4">
+                    <div class="card card-table">
                         <table class="table table-hover table-borderless mb-0">
                             <thead>
                                 <tr class="tap">
@@ -259,7 +346,7 @@
                                     <td class=" ps-1" style="width: 10%; color:#00b053">
                                         4.08%
                                     </td>
-                                    <td class="" style="width: 10%;">
+                                    <td class="text-center" style="width: 10%;">
                                         <label class="switch">
                                             <input type="checkbox">
                                             <span class="slider round"></span>
@@ -277,22 +364,21 @@
                                     </td>
                                     <td class="text-center" style="width: 20%">$2132</td>
                                     <td class="text-center" style="width: 20%">$332</td>
-                                    <td class="pt-0 pb-2" style="width: 16%">
-                                        <div class="controlchartsize">
+                                    <td class="" style="width: 16%">
+                                        <div>
                                             <canvas id="chartforcoin"></canvas>
                                         </div>
                                     </td>
                                     <td class="px-0" style="width: 4%; text-align: right;">
-                                        <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
+                                        <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053;"></i>
                                     </td>
                                     <td class=" ps-1" style="width: 10%; color:#00b053">
                                         4.08%
                                     </td>
-                                    <td class="" style="width: 10%;">
+                                    <td class="text-center" style="width: 10%;">
                                         <label class="switch">
                                             <input type="checkbox">
                                             <span class="slider round"></span>
-                                            <span class="innerslider round"></span>
                                         </label>
                                     </td>
                                 </tr>
@@ -302,6 +388,7 @@
                 </div>
 
             </div>
+
             <hr>
 
             <!-- market page -->
@@ -386,8 +473,8 @@
             </div>
 
             <hr>
-            <!-- market watch - bitcoin -->
 
+            <!-- market watch - bitcoin -->
             <!-- page title -->
             <div class="row">
                 <div class="col-12 title pt-4">Bitcoin</div>
@@ -720,6 +807,7 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="path/to/chartjs-plugin-annotation/dist/chartjs-plugin-annotation.min.js"></script>
     <script>
 
         //sidebar display-hide switch
@@ -747,7 +835,7 @@
             animate();
         });
 
-
+        Chart.defaults.elements.line.borderWidth = 7;
         //market coin line chart
         var canvas = document.getElementById("chartforcoin");
         var config = {
@@ -804,10 +892,9 @@
                 datasets: [
                     {
                         label: 'Temperature',
-                        data: [26, 12, 18, 26, 14, 22, 12, 20, 12, 18, 26, 14, 14, 22, 12, 20, 22, 12, 20, 12, 18],
+                        data: [26, 12, 50, 67, 89, 122, 102, 120, 112, 186, 266, 146, 214, 322, 312, 320, 352, 312, 299, 312, 278],
                         fill: false,
-                        borderColor: "#000", //#eb0a25 red
-                        borderWidth: 2,
+                        borderColor: "#57AE95", //#eb0a25 red
                         lineTension: 0.4
                     }
                 ]
@@ -819,7 +906,10 @@
                 responsive: true,
                 elements: {
                     point: {
-                        radius: 0
+                        radius: customRadius,
+                        display: true,
+                        borderWidth: 2,
+                        backgroundColor: `rgba(207, 253, 240, 0.5)`
                     }
                 },
                 scales: {
@@ -831,16 +921,51 @@
                         beginAtZero: true
                     }
                 },
-                plugins: {
+                plugins: {                   
                     legend: {
                         display: false,
                     },
                     tooltip: {
-                        enabled: false,
+                        callbacks: {
+                            label: function (context) {
+                                var index = context.dataIndex
+                                if (index === 5 || index === 13 ){
+                                    return 'BUY'
+                                }
+                            }
+                        }
                     },
                 }
             },
+            plugins:[{
+                beforeDraw: function(chart, args, options){
+                        const { ctx } = chart;
+                        ctx.shadowColor = "rgba(207, 253, 240, 1)";
+                        ctx.shadowBlur = 8;
+                        ctx.shadowOffsetY = 30;
+                },
+                onAnimationComplete: function (chart, args, options) {
+                    const { ctx } = chart;
+                    ctx.font = this.scale.font;
+                    ctx.fillStyle = this.scale.textColor
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "bottom";
+
+                    this.datasets.forEach(function (dataset) {
+                        dataset.points.forEach(function (points) {
+                            ctx.fillText(points.value, points.x, points.y - 10);
+                        });
+                    })
+                }
+            }]
         };
+        function customRadius(context) {
+            let index = context.dataIndex;
+            let value = context.dataset.data[index];
+            return index === 5 || index === 13 ?
+                15 :
+                0;
+        }
         window.chart = new Chart(canvas2, config2);
 
         //daily profit line chart
@@ -905,7 +1030,6 @@
                             }
                         }
                     },
-                    tension: 0.4,
                 }
             },
         };
