@@ -13,37 +13,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Sarabun:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Sarabun:wght@400;500;700&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
     <!-- topbar -->
-    <nav class="navbar navbar-light bg-light align-middle sticky-top">
-        <div class="container-fluid">
-            <span class="margin: 0px 20px">
+    <nav class="navbar navbar-light bg-light align-middle sticky-top d-flex justify-content-between">
+        <div class="sidebar-switch">
+            <span>
                 <i class="fa fa-fw fa-bars" onclick="w3_open()"></i>
             </span>
-
-            <span class="username" style="font-size:14px;">
+        </div>
+        <div>
+            <span class="username">
                 Username
                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                    alt="userphoto" style="height: 24px; width: 24px" class="ms-1">
+                    alt="userphoto">
             </span>
         </div>
     </nav>
 
     <!-- sidebar -->
     <div class="sidebar" id="sidebar">
-        <a href="#home"><i class="fa fa-fw fa-home"></i></a>
+        <a class="active" href="#home"><i class="fa fa-fw fa-home"></i></a>
         <a href="#services"><i class="fa fa-fw fa-wrench"></i></a>
         <a href="#clients"><i class="fa fa-fw fa-user"></i></a>
         <a href="#contact"><i class="fa fa-fw fa-envelope"></i></a>
     </div>
 
     <!-- content -->
-    <div class="content">
+    <div class="content" id="content">
         <div class="px-4">
 
             <!-- Create bot page -->
@@ -64,12 +64,12 @@
             <div class="row ">
                 <div class="col-12">
                     <div class="position-relative my-4 mx-auto d-flex justify-content-center progressbar">
-                        <hr class="progressbarhr">
+                        <hr class="progressbarhr progressbarhr-done">
                         <hr class="progressbarhr">
                         <button type="button"
-                            class="position-absolute top-50 start-0 translate-middle stepbutton selected">1</button>
+                            class="position-absolute top-50 start-0 translate-middle stepbutton">1</button>
                         <button type="button"
-                            class="position-absolute top-50 start-50 translate-middle stepbutton">2</button>
+                            class="position-absolute top-50 start-50 translate-middle stepbutton selected">2</button>
                         <button type="button"
                             class="position-absolute top-50 start-100  translate-middle stepbutton">3</button>
                     </div>
@@ -84,205 +84,303 @@
                 </div>
             </div>
 
-            <!-- card for bot -->
-            <div class="row">
-                <div class="col-12 col-md-4">                    
-                    <div class="rounded-box"
-                        style="width: 400px; border: 2px solid #57AE95; box-shadow: 4px 4px 0px #57AE95; background-color: white;">
-                        <div class="d-flex justify-content-between"
-                            style="padding: 33px 24px; border-bottom: 2px solid #57AE95; background: #CFFDF0; border-radius: 12px 12px 0px 0px">
-                            <span class="tap align-middle" style="font-size: 37px; color: #439A81;">Tanjiro</span>
-                            <div style="position: relative; display: inline-block; width: 38px">
-                                <span
-                                    style="border-radius: 34px; height: 38px; width: 38px; border: 2px solid black; position: absolute; top: -9px; left:-9px; background-color: white; box-shadow: 2px 2px 0px black">
-                                </span>
-                                <span style="border-radius: 34px; height: 20px; width: 20px; border: 2px solid black; position: absolute; background-color: 
+            <!-- flip card -->
+            <div class="row gy-5">
+                <div class="col-12 col-md-4">
+                    <div class="flip-card mx-auto">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="rounded-box"
+                                    style="width: 400px; height: 550px; border: 2px solid #57AE95; box-shadow: 4px 4px 0px #57AE95; background-color: white;">
+                                    <div id="select-bot" class="d-flex justify-content-between" style="padding: 33px 24px; border-bottom: 2px solid #57AE95; background: #CFFDF0; border-radius: 12px 12px 0px 0px">
+                                        <span class="align-middle"
+                                            style="font-size: 37px; color: #439A81; line-height: 21px;">Tanjiro</span>
+                                        <div class="select-bot-circle">
+                                            <span class="outer-select-circle"></span>
+                                            <span class="inner-select-circle"></span>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 20px; height: 461px; position: relative;">
+                                        <span class="badge rounded-pill tap"
+                                            style="background-color: #FFD6B0; color: #CC782B; font-size: 16px;">Moderate</span>
+                                        <div>
+                                            <canvas id="chartforcoin2" class="mx-auto"
+                                                style="margin-top: 30px; margin-bottom: 30px;"></canvas>
+                                        </div>
+                                        <div class="text-center d-flex flex-row  justify-content-center">
+                                            <div class="pe-3">
+                                                <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
+                                                <div><img
+                                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                                        alt="Avatar" style="width: 35px;"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ps-3 tap" style="color: gray; padding-bottom: 5px;">
+                                                    PERFORMANCE <i class="fa fa-fw fa-question-circle"></i></div>
+                                                <div class="ps-3"
+                                                    style="font-size: 37px; color: #23C992; line-height: 40px; border-left: 1px solid #919191;">
+                                                    76.42%</div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end"
+                                            style="color: #57AE95; position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readmore" style="line-height: 16px; cursor:pointer">READ MORE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="rounded-box"
+                                    style="width: 400px; height: 550px; border: 2px solid #57AE95; box-shadow: 4px 4px 0px #57AE95; background-color: white;">
+                                    <div class="d-flex justify-content-between"
+                                        style="padding: 33px 24px; border-bottom: 2px solid #57AE95; background: #CFFDF0; border-radius: 12px 12px 0px 0px">
+                                        <span class="align-middle"
+                                            style="font-size: 37px; color: #439A81; line-height: 21px;">Tanjiro</span>
+                                        <div class="select-bot-circle">
+                                            <span
+                                                style="border-radius: 34px; height: 38px; width: 38px; border: 2px solid black; position: absolute; top: -9px; left:-9px; background-color: white; box-shadow: 2px 2px 0px black">
+                                            </span>
+                                            <span style="border-radius: 34px; height: 20px; width: 20px; border: 2px solid black; position: absolute; background-color: 
                                 #4E9E7E;"> </span>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 20px; height: 461px; position: relative;">
+                                        <div class="d-flex flex-row  justify-content-center">
+                                            <div
+                                                style="width: 310px; font-size: 22px; font-weight: 400; line-height: 29px; text-align: justify; position: absolute; top: 40%; transform: translateY(-50%);">
+                                                <p>Conservative DCA strategy which buys tokens at lowest possible
+                                                    support. Less frequent buys ensure capital preservation when the
+                                                    best buying opportunity arises.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end"
+                                            style="color: #57AE95; position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readless" style="line-height: 16px; cursor:pointer">READ LESS</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div style="padding: 20px; ">
-                            <span class="badge rounded-pill tap"
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <!-- trading amount -->
+        <div class="row  justify-content-center">
+            <div class="col-8 pt-5">
+                <div class="rounded-box" style="box-shadow: 4px 4px 0px black;">
+                    <div class="d-flex "
+                        style="padding: 15px 50px; background: #F9F9FF; border-radius: 12px 12px 0px 0px">
+                        <span class="align-middle" style="font-size: 30px; line-height: 39px;">Trading Amount</span>
+                    </div>
+                    <div style="padding: 30px 50px; background-color: white; border-radius: 0px 0px 12px 12px">
+                        <div>
+                            <div class="input-group" style="width: 500px; ">
+                                <span class="input-group-text" id="trading-amount"
+                                    style=" border-radius: 12px 0px 0px 12px; background-color: #E6EF59; padding: 5px 30px; border: 2px solid #000000;">$</span>
+                                <input type="text" class="form-control tap"
+                                    style="border-radius: 0px 12px 12px 0px; border: 2px solid #000000; background-color: #EEEEFF; color: #7B7B9F;"
+                                    placeholder="2,000" aria-label="Username" aria-describedby="trading-amount">
+                            </div>
+                            <div>
+                                <span style="margin-left: 72px; margin-top: 30px;">The minimum trading amount is
+                                    $2,000</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end" style="padding-top: 100px;">
+                            <div class="yellowbox align-middle"
+                                style="margin-right: 20px; background-color: white; padding: 12px 25px;"><img
+                                    src="pointer.png"
+                                    style="height: 25px; width: 25px; transform: rotate(180deg); margin-right: 15px; margin-bottom: 2px;"
+                                    alt="back"> BACK</div>
+                            <div class="yellowbox align-middle" style="padding: 12px 25px;">NEXT<img src="pointer.png"
+                                    style="height: 25px; width: 25px; margin-left: 15px; margin-bottom: 2px" alt="next">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- check submission -->
+        <div class="row  justify-content-center">
+            <div class="col-8 pt-5">
+                <div class="rounded-box" style="box-shadow: 4px 4px 0px black;">
+                    <div class="d-flex "
+                        style="padding: 15px 50px; background: #F9F9FF; border-radius: 12px 12px 0px 0px">
+                        <span class="align-middle" style="font-size: 30px; line-height: 39px;">Check
+                            Submission</span>
+                    </div>
+                    <div style="padding: 30px 50px; background-color: white; border-radius: 0px 0px 12px 12px">
+                        <div>
+                            <span class="align-middle"
+                                style="font-size: 37px; color: #439A81; margin-right: 15px;">Tanjiro</span>
+                            <img class=" align-middle"
+                                src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png" alt="Avatar"
+                                style="width: 35px; margin-right: 15px">
+                            <span class="badge rounded-pill align-middle"
                                 style="background-color: #FFD6B0; color: #CC782B; font-size: 16px;">Moderate</span>
-                            <div>
-                                <canvas id="chartforcoin2" class="mx-auto"
-                                    style="margin-top: 30px; margin-bottom: 30px;"></canvas>
-                            </div>
-                            <div class="text-center d-flex flex-row  justify-content-center">
-                                <div class="pe-3">
-                                    <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
-                                    <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
-                                            alt="Avatar" style="width: 35px;"></div>
-                                </div>
-                                <div>
-                                    <div class="ps-3 tap" style="color: gray; padding-bottom: 5px;">PERFORMANCE <i
-                                            class="fa fa-fw fa-question-circle"></i></div>
-                                    <div class="ps-3"
-                                        style="font-size: 37px; color: #23C992; line-height: 40px; border-left: 1px solid #919191;">
-                                        76.42%</div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end pt-5" style="color: #57AE95;">
-                                <span class="tap" style="line-height: 16px;">READ MORE</p>
+                        </div>
+                        <div>
+                            <p style="max-width: 550px; font-weight: 400; font-size: 22px; line-height: 29px;">
+                                Conservative DCA strategy which buys tokens at lowest possible support. Less
+                                frequent buys ensure capital preservation when the best buying opportunity arises.
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <span class="tap active">EDIT</span>
+                        </div>
+                        <div>
+                            <div class="tap"><span>Trading Amount</span></div>
+                            <div style="font-size: 25px; margin-top: 10px;"><span>$4,346</span></div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <span class="tap active">EDIT</span>
+                        </div>
+                        <div class="d-flex justify-content-end" style="padding-top: 100px;">
+                            <div class="yellowbox align-middle"
+                                style="margin-right: 20px; background-color: white; padding: 12px 25px;"><img
+                                    src="pointer.png"
+                                    style="height: 25px; width: 25px; transform: rotate(180deg); margin-right: 15px; margin-bottom: 2px;"
+                                    alt="back"> BACK</div>
+                            <div class="yellowbox align-middle" style="padding: 12px 25px;">NEXT<img src="pointer.png"
+                                    style="height: 25px; width: 25px; margin-left: 15px; margin-bottom: 2px" alt="next">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- trading amount -->
-            <div class="row  justify-content-center">
-                <div class="col-8 pt-5">
-                    <div class="rounded-box" style="box-shadow: 4px 4px 0px black;">
-                        <div class="d-flex " style="padding: 15px 50px; background: #F9F9FF; border-radius: 12px 12px 0px 0px">
-                            <span class="tap align-middle" style="font-size: 30px; line-height: 39px;">Trading Amount</span>                            
+        </div>
+        <hr>
+
+        <!-- bot page -->
+        <!-- page title -->
+        <div class="row">
+            <div class="col-12 title pt-4 d-flex justify-content-between">
+                <span>Bot</span>
+                <span class="yellowbox my-auto">CREATE BOTS<i class="fa fa-fw fa-plus"></i></span>
+            </div>
+        </div>
+
+        <!-- sub pages -->
+        <div class="row">
+            <div class="col-12 pt-2 tap-control">
+                <span href="#home" class="tap me-2 active">ACTIVE</span>
+                <span href="#home" class="tap me-2">IN PROGRESS</span>
+                <span href="#home" class="tap">INACTIVE</span>
+            </div>
+        </div>
+
+        <!-- filter -->
+        <div class="row">
+            <div class="col-12 pt-5">
+                <div class="rounded-box">
+                    <div class="filter-top d-flex justify-content-between">
+                        <div>
+                            <span class="tap align-middle">FILTER <img class="mb-1" style="height: 18px; width: 18px"
+                                    src="filter.png" alt="removefilter"></span>
                         </div>
-                        <div style="padding: 30px 50px; background-color: white; border-radius: 0px 0px 12px 12px">
-                            <div>
-                                <div class="input-group" style="width: 500px; ">
-                                    <span class="input-group-text" id="trading-amount" style=" border-radius: 12px 0px 0px 12px; background-color: #E6EF59; padding: 5px 30px; border: 2px solid #000000;">$</span>
-                                    <input type="text" class="form-control tap" style="border-radius: 0px 12px 12px 0px; border: 2px solid #000000; background-color: #EEEEFF; color: #7B7B9F;" placeholder="2,000" aria-label="Username" aria-describedby="trading-amount">
-                                </div>
-                                <div>
-                                    <span style="margin-left: 72px; margin-top: 30px;">The minimum trading amount is $2,000</span>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end" style="padding-top: 100px;">
-                                <div class="yellowbox align-middle" style="margin-right: 20px; background-color: white; padding: 12px 25px;"><img src="pointer.png" style="height: 25px; width: 25px; transform: rotate(180deg); margin-right: 15px; margin-bottom: 2px;" alt="back"> BACK</div>
-                                <div class="yellowbox align-middle" style="padding: 12px 25px;">NEXT<img src="pointer.png" style="height: 25px; width: 25px; margin-left: 15px; margin-bottom: 2px" alt="next"></div>
-                            </div>
-                        </div>                        
+                        <div class="text-center">
+                            <img style="height: 16px; width: 28px" src="1178604.png" alt="showrestfilter" type="button"
+                                data-bs-toggle="collapse" class="my-1" data-bs-target="#collapseExample">
+                        </div>
                     </div>
-                </div>      
-            </div>
-            <hr>
-
-            <!-- bot page -->
-            <!-- page title -->
-            <div class="row">
-                <div class="col-12 title pt-4 d-flex justify-content-between">
-                    <span>Bot</span>
-                    <span class="yellowbox my-auto">CREATE BOTS<i class="fa fa-fw fa-plus"></i></span>
-                </div>
-            </div>
-
-            <!-- sub pages -->
-            <div class="row">
-                <div class="col-12 pt-2 tap-control">
-                    <span href="#home" class="tap me-2 active">ACTIVE</span>
-                    <span href="#home" class="tap me-2">IN PROGRESS</span>
-                    <span href="#home" class="tap">INACTIVE</span>
-                </div>
-            </div>
-
-            <!-- filter -->
-            <div class="row">
-                <div class="col-12 pt-5">
-                    <div class="rounded-box">
-                        <div class="filter-top d-flex justify-content-between">
-                            <div>
-                                <span class="tap align-middle">FILTER <img class="mb-1"
-                                        style="height: 18px; width: 18px" src="filter.png" alt="removefilter"></span>
-                            </div>
-                            <div class="text-center">
-                                <img style="height: 16px; width: 28px" src="1178604.png" alt="showrestfilter"
-                                    type="button" data-bs-toggle="collapse" class="my-1"
-                                    data-bs-target="#collapseExample">
-                            </div>
-                        </div>
-                        <div class="collapse" id="collapseExample">
-                            <div class="filter-bottom">
-                                <div class="row">
-                                    <div class="col-12 col-md-3" style="position: relative;">
-                                        <p class="tap">Bot Type</p>
-                                        <div class="rounded-box" style="background: #EEEEFF">
-                                            <div class="subfilter-top d-flex justify-content-between">
-                                                <div>
-                                                    <span class="tap align-top">All Bots </span>
-                                                </div>
-                                                <div class="text-center">
-                                                    <img style="height: 8px; width: 16px" src="1178604.png"
-                                                        alt="showrestfilter" type="button" data-bs-toggle="collapse"
-                                                        class="mt-2" data-bs-target="#collapsebottype">
-                                                </div>
+                    <div class="collapse" id="collapseExample">
+                        <div class="filter-bottom">
+                            <div class="row">
+                                <div class="col-12 col-md-3" style="position: relative;">
+                                    <p class="tap">Bot Type</p>
+                                    <div class="rounded-box" style="background: #EEEEFF">
+                                        <div class="subfilter-top d-flex justify-content-between">
+                                            <div>
+                                                <span class="tap align-top">All Bots </span>
                                             </div>
-                                            <div class="collapse" id="collapsebottype">
-                                                <div class="subfilter-bottom">
-                                                    <span class="tap filterblock"
-                                                        style="border-top: 2px solid black;">Bitcoin Bot</span>
-                                                    <span class="tap filterblock">Ethereum Bot</span>
-                                                    <span class="tap filterblock">RSI Bot</span>
-                                                    <span class="tap filterblock"
-                                                        style="border-radius: 0px 0px 12px 12px;">DCA
-                                                        Bot</span>
-                                                </div>
+                                            <div class="text-center">
+                                                <img style="height: 8px; width: 16px" src="1178604.png"
+                                                    alt="showrestfilter" type="button" data-bs-toggle="collapse"
+                                                    class="mt-2" data-bs-target="#collapsebottype">
+                                            </div>
+                                        </div>
+                                        <div class="collapse" id="collapsebottype">
+                                            <div class="subfilter-bottom">
+                                                <span class="tap filterblock"
+                                                    style="border-top: 2px solid black;">Bitcoin Bot</span>
+                                                <span class="tap filterblock">Ethereum Bot</span>
+                                                <span class="tap filterblock">RSI Bot</span>
+                                                <span class="tap filterblock"
+                                                    style="border-radius: 0px 0px 12px 12px;">DCA
+                                                    Bot</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-3" style="position: relative;">
-                                        <p class="tap">Pairs</p>
-                                        <div class="rounded-box" style="background: #EEEEFF">
-                                            <div class="subfilter-top d-flex justify-content-between">
-                                                <div>
-                                                    <span class="tap align-top">All Pairs </span>
-                                                </div>
-                                                <div class="text-center">
-                                                    <img style="height: 8px; width: 16px" src="1178604.png"
-                                                        alt="showrestfilter" type="button" data-bs-toggle="collapse"
-                                                        class="mt-2" data-bs-target="#collapsepairs">
-                                                </div>
+                                </div>
+                                <div class="col-12 col-md-3" style="position: relative;">
+                                    <p class="tap">Pairs</p>
+                                    <div class="rounded-box" style="background: #EEEEFF">
+                                        <div class="subfilter-top d-flex justify-content-between">
+                                            <div>
+                                                <span class="tap align-top">All Pairs </span>
                                             </div>
-                                            <div class="collapse" id="collapsepairs">
-                                                <div class="subfilter-bottom">
-                                                    <span class="tap filterblock"
-                                                        style="border-top: 2px solid black;">Bitcoin Bot</span>
-                                                    <span class="tap filterblock">Ethereum Bot</span>
-                                                    <span class="tap filterblock">RSI Bot</span>
-                                                    <span class="tap filterblock"
-                                                        style="border-radius: 0px 0px 12px 12px;;">DCA
-                                                        Bot</span>
-                                                </div>
+                                            <div class="text-center">
+                                                <img style="height: 8px; width: 16px" src="1178604.png"
+                                                    alt="showrestfilter" type="button" data-bs-toggle="collapse"
+                                                    class="mt-2" data-bs-target="#collapsepairs">
+                                            </div>
+                                        </div>
+                                        <div class="collapse" id="collapsepairs">
+                                            <div class="subfilter-bottom">
+                                                <span class="tap filterblock"
+                                                    style="border-top: 2px solid black;">Bitcoin Bot</span>
+                                                <span class="tap filterblock">Ethereum Bot</span>
+                                                <span class="tap filterblock">RSI Bot</span>
+                                                <span class="tap filterblock"
+                                                    style="border-radius: 0px 0px 12px 12px;;">DCA
+                                                    Bot</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <p class="tap">Strategy</p>
-                                        <div class="row gx-3 text-center">
-                                            <div class="col-2">
-                                                <div class="filterbutton" style="background: #EEEEFF;">
-                                                    <div class="subfilter-top">
-                                                        <div>
-                                                            <span class="tap align-top">All</span>
-                                                        </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <p class="tap">Strategy</p>
+                                    <div class="row gx-3 text-center">
+                                        <div class="col-2">
+                                            <div class="filterbutton" style="background: #EEEEFF;">
+                                                <div class="subfilter-top">
+                                                    <div>
+                                                        <span class="tap align-top">All</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-4">
-                                                <div class="filterbutton"
-                                                    style="background: #FFFCDD; border-color: #8E810D;color: #8E810D">
-                                                    <div class="subfilter-top">
-                                                        <div>
-                                                            <span class="tap align-top">Conservative</span>
-                                                        </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="filterbutton"
+                                                style="background: #FFFCDD; border-color: #8E810D;color: #8E810D">
+                                                <div class="subfilter-top">
+                                                    <div>
+                                                        <span class="tap align-top">Conservative</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-3">
-                                                <div class="filterbutton"
-                                                    style="background: #FFE4CC; border-color: #995C25;color: #995C25">
-                                                    <div class="subfilter-top">
-                                                        <div>
-                                                            <span class="tap align-top">Moderate</span>
-                                                        </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="filterbutton"
+                                                style="background: #FFE4CC; border-color: #995C25;color: #995C25">
+                                                <div class="subfilter-top">
+                                                    <div>
+                                                        <span class="tap align-top">Moderate</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-3">
-                                                <div class="filterbutton"
-                                                    style="background: #FFD3D3; border-color: #961414;color: #961414">
-                                                    <div class="subfilter-top">
-                                                        <div>
-                                                            <span class="tap align-top">Aggressive</span>
-                                                        </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="filterbutton"
+                                                style="background: #FFD3D3; border-color: #961414;color: #961414">
+                                                <div class="subfilter-top">
+                                                    <div>
+                                                        <span class="tap align-top">Aggressive</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -294,538 +392,471 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- date and sort -->
-            <div class="row">
-                <div class="col-12 pt-5 d-flex justify-content-end" style="color:grey; position:relative">
+        <!-- date and sort -->
+        <div class="row">
+            <div class="col-12 pt-5 d-flex justify-content-end" style="color:grey; position:relative">
 
-                    <span class="tap" style="padding: 12px 20px 8px 20px; color: black;">TIME</span>
-                    <div>
-                        <div class="rounded-box" style="background-color: #EEEEFF">
-                            <span class="tap timeblock" style="border-left: 0px;">1D</span>
-                            <span class="tap timeblock">1M</span>
-                            <span class="tap timeblock">1Y</span>
-                            <span class="tap timeblock timeactive">All Time</span>
+                <span class="tap" style="padding: 12px 20px 8px 20px; color: black;">TIME</span>
+                <div>
+                    <div class="rounded-box" style="background-color: #EEEEFF">
+                        <span class="tap timeblock" style="border-left: 0px;">1D</span>
+                        <span class="tap timeblock">1M</span>
+                        <span class="tap timeblock">1Y</span>
+                        <span class="tap timeblock timeactive">All Time</span>
+                    </div>
+                </div>
+                <span class="tap" style="padding: 12px 170px 8px 20px; color: black">SORT BY</span>
+                <div class="rounded-box"
+                    style="background: #EEEEFF; color: black; width: 150px; position: absolute; z-index: 9999;">
+                    <div class="subfilter-top d-flex justify-content-between">
+                        <div>
+                            <span class="tap align-top">All Bots </span>
+                        </div>
+                        <div class="text-center">
+                            <img style="height: 8px; width: 16px" src="1178604.png" alt="showrestfilter" type="button"
+                                data-bs-toggle="collapse" class="mt-2" data-bs-target="#collapsecriteria">
                         </div>
                     </div>
-                    <span class="tap" style="padding: 12px 170px 8px 20px; color: black">SORT BY</span>
-                    <div class="rounded-box"
-                        style="background: #EEEEFF; color: black; width: 150px; position: absolute; z-index: 9999;">
-                        <div class="subfilter-top d-flex justify-content-between">
-                            <div>
-                                <span class="tap align-top">All Bots </span>
-                            </div>
-                            <div class="text-center">
-                                <img style="height: 8px; width: 16px" src="1178604.png" alt="showrestfilter"
-                                    type="button" data-bs-toggle="collapse" class="mt-2"
-                                    data-bs-target="#collapsecriteria">
-                            </div>
-                        </div>
-                        <div class="collapse" id="collapsecriteria">
-                            <div class="subfilter-bottom">
-                                <span class="tap filterblock" style="border-top: 2px solid black;">Price</span>
-                                <span class="tap filterblock">Performance</span>
-                                <span class="tap filterblock">Popularity</span>
-                                <span class="tap filterblock" style="border-radius: 0px 0px 12px 12px;;">New
-                                    Bot</span>
-                            </div>
+                    <div class="collapse" id="collapsecriteria">
+                        <div class="subfilter-bottom">
+                            <span class="tap filterblock" style="border-top: 2px solid black;">Price</span>
+                            <span class="tap filterblock">Performance</span>
+                            <span class="tap filterblock">Popularity</span>
+                            <span class="tap filterblock" style="border-radius: 0px 0px 12px 12px;;">New
+                                Bot</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- market coin table -->
-            <div class="row">
-                <div class="col-12 mt-4">
-                    <div class="card card-table">
-                        <table class="table table-hover table-borderless mb-0">
-                            <thead>
-                                <tr class="tap">
-                                    <th>Bot</th>
-                                    <th>Coin</th>
-                                    <th class="text-center">Trading Amount</th>
-                                    <th class="text-center">Realised Profit</th>
-                                    <th colspan="3">Performance</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="position-relative" style="width: 15%">
-                                        <div class="highlighter" style="background: #B4A200;"></div>
-                                        Tanjiro
-                                    </td>
-                                    <td class="" style="width: 5%;"><img
-                                            src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
-                                            alt="Avatar">
-                                    </td>
-                                    <td class="text-center" style="width: 20%">$2132</td>
-                                    <td class="text-center" style="width: 20%">$332</td>
-                                    <td class="" style="width: 16%">
-                                        <div>
-                                            <canvas id="chartforcoin"></canvas>
-                                        </div>
-                                    </td>
-                                    <td class="px-0" style="width: 4%; text-align: right;">
-                                        <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053;"></i>
-                                    </td>
-                                    <td class=" ps-1" style="width: 10%; color:#00b053">
-                                        4.08%
-                                    </td>
-                                    <td class="text-center" style="width: 10%;">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="position-relative" style="width: 15%">
-                                        <div class="highlighter" style="background: #B4A200;"></div>
-                                        Tanjiro
-                                    </td>
-                                    <td class="" style="width: 5%;"><img
-                                            src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
-                                            alt="Avatar">
-                                    </td>
-                                    <td class="text-center" style="width: 20%">$2132</td>
-                                    <td class="text-center" style="width: 20%">$332</td>
-                                    <td class="" style="width: 16%">
-                                        <div>
-                                            <canvas id="chartforcoin"></canvas>
-                                        </div>
-                                    </td>
-                                    <td class="px-0" style="width: 4%; text-align: right;">
-                                        <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053;"></i>
-                                    </td>
-                                    <td class=" ps-1" style="width: 10%; color:#00b053">
-                                        4.08%
-                                    </td>
-                                    <td class="text-center" style="width: 10%;">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-
-            <hr>
-
-            <!-- market page -->
-            <!-- page title -->
-            <div class="row">
-                <div class="col-12 title pt-4">Market</div>
-            </div>
-
-            <!-- sub pages -->
-            <div class="row">
-                <div class="col-12 pt-4 tap-control">
-                    <span href="#home" class="tap active me-1">Market Watch</span>
-                    <span href="#home" class="tap">My Watchlist</span>
-                </div>
-            </div>
-
-            <!-- search and sort -->
-            <div class="row">
-                <div class="col-12 pt-5 d-flex justify-content-between">
-                    <div class="search">
-                        <i class="fa fa-fw fa-search"></i>
-                        <input type="text" class="form-control form-control-sm" placeholder="Search here">
-                    </div>
-                    <div class="dropdown">
-                        <span class="tap">Sort by</span>
-                        <span>
-                            <select class="form-select form-select-sm" aria-label="Default select example">
-                                <option value="price" selected>Price (Desc.)</option>
-                                <option value="popular">Popular (Desc.)</option>
-                                <option value="new">New (Desc.)</option>
-                            </select>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- market coin table -->
-            <div class="row">
-                <div class="col-12 mt-4 table-responsive">
-                    <table class="table table-hover table-striped table-borderless ">
+        <!-- market coin table -->
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="card card-table">
+                    <table class="table table-hover table-borderless mb-0">
                         <thead>
-                            <tr>
-                                <th colspan="2">Name</th>
-                                <th>Market Cap</th>
-                                <th>Price</th>
-                                <th>Vol.</th>
-                                <th colspan="4">% Change (24 hr)</th>
+                            <tr class="tap">
+                                <th>Bot</th>
+                                <th>Coin</th>
+                                <th class="text-center">Trading Amount</th>
+                                <th class="text-center">Realised Profit</th>
+                                <th colspan="3">Performance</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="py-2  align-middle" style="width: 5%"><img
+                                <td class="position-relative" style="width: 15%">
+                                    <div class="highlighter" style="background: #B4A200;"></div>
+                                    Tanjiro
+                                </td>
+                                <td class="" style="width: 5%;"><img
                                         src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
                                         alt="Avatar">
                                 </td>
-                                <td class="py-2 align-middle" style="width: 15%"><span class="fs-6">USDT</span><br><span
-                                        style="color:grey">USD Tether</span></td>
-                                <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
-                                <td class="py-2 align-middle" style="width: 20%">
-                                    $923.03798295
-                                </td>
-                                <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
-                                <td class="py-2 align-middle" style="width: 12%">
-                                    <div class="controlchartsize">
+                                <td class="text-center" style="width: 20%">$2132</td>
+                                <td class="text-center" style="width: 20%">$332</td>
+                                <td class="" style="width: 16%">
+                                    <div>
                                         <canvas id="chartforcoin"></canvas>
                                     </div>
                                 </td>
-                                <td class="py-2 align-middle pe-0" style="width: 3%">
-                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
+                                <td class="px-0" style="width: 4%; text-align: right;">
+                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053;"></i>
                                 </td>
-                                <td class="py-2 align-middle ps-1" style="width: 9%">
-                                    <span style="color:#00b053">4.08%</span>
+                                <td class=" ps-1" style="width: 10%; color:#00b053">
+                                    4.08%
                                 </td>
-                                <td class="py-2 align-middle" style="width: 4%; color:grey"><i
-                                        class="fa fa-2x fa-plus-circle"></i>
+                                <td class="text-center" style="width: 10%;">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
                                 </td>
                             </tr>
-
+                            <tr>
+                                <td class="position-relative" style="width: 15%">
+                                    <div class="highlighter" style="background: #B4A200;"></div>
+                                    Tanjiro
+                                </td>
+                                <td class="" style="width: 5%;"><img
+                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                        alt="Avatar">
+                                </td>
+                                <td class="text-center" style="width: 20%">$2132</td>
+                                <td class="text-center" style="width: 20%">$332</td>
+                                <td class="" style="width: 16%">
+                                    <div>
+                                        <canvas id="chartforcoin"></canvas>
+                                    </div>
+                                </td>
+                                <td class="px-0" style="width: 4%; text-align: right;">
+                                    <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053;"></i>
+                                </td>
+                                <td class=" ps-1" style="width: 10%; color:#00b053">
+                                    4.08%
+                                </td>
+                                <td class="text-center" style="width: 10%;">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <hr>
-
-            <!-- market watch - bitcoin -->
-            <!-- page title -->
-            <div class="row">
-                <div class="col-12 title pt-4">Bitcoin</div>
-            </div>
-
-            <!-- sub pages -->
-            <div class="row">
-                <div class="col-12 pt-4 tap-control">
-                    <span href="#home" class="tap">Market Watch</span>>
-                    <span href="#home" class="tap">Bitcoin</span>
-                </div>
-            </div>
-
-            <!-- sub pages -->
-            <div class="row">
-                <div class="col-12 pt-4">
-                    <span class="tap">Price</span>
-                </div>
-                <div class="col-12">
-                    <span class="fw-bold fs-1 pe-4">$ 36603.029732995</span>
-                    <i class="fa fa-caret-up pb-1" style="color:#00b053"></i>
-                    <span class="pe-1 fw-bold" style="color:#00b053">4.08%</span>
-                    <span class="tap">% Change (24 hr)</span>
-                </div>
-            </div>
-
-            <!-- basic info -->
-            <div class="row py-3 gx-5">
-                <div class="col-12 col-md-4">
-                    <div class="card card-info p-3">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <i class="fa fa-2x fa-coins px-3 py-4"></i>
-                            </div>
-                            <div class="col-md-9">
-                                <div>
-                                    <p class="tap my-2">Market Cap</p>
-                                    <p class="tap fs-5 mb-0">$693303915863.47</p>
-                                    <p class="tap mb-2">30% of crypto market</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="card card-info p-3">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <i class="fa fa-2x fa-coins px-3 py-4"></i>
-                            </div>
-                            <div class="col-md-9">
-                                <div>
-                                    <p class="tap my-2">Market Cap</p>
-                                    <p class="tap fs-5 mb-0">$693303915863.47</p>
-                                    <p class="tap mb-2">30% of crypto market</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="card card-info p-3">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <i class="fa fa-2x fa-coins px-3 py-4"></i>
-                            </div>
-                            <div class="col-md-9">
-                                <div>
-                                    <p class="tap my-2">Market Cap</p>
-                                    <p class="tap fs-5 mb-0">$693303915863.47</p>
-                                    <p class="tap mb-2">30% of crypto market</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chart -->
-            <div class="row py-3">
-                <div class="col-12 d-flex justify-content-end" style="color:grey">
-                    <div>
-                        <p class="tap">Time</p>
-                        <span class="pe-2 fw-bold">1D</span><span class="pe-2 fw-bold">1M</span><span
-                            class="pe-2 fw-bold">1Y</span><span class="fw-bold active">All time</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 px-4">
-                    <canvas id="chartforcoin2"></canvas>
-                </div>
-            </div>
-
-            <!-- description -->
-            <div class="row">
-                <div class="col-12">
-                    <span class="fw-bold fs-4">About</span>
-                    <p>Bitcoin is the first digital currency that allows users to send and receive money, without the
-                        interference of a central bank or government. Instead, a network of thousands of peers is
-                        controlling the transactions; a decentralized system. Bitcoin’s useful qualities (decentralized,
-                        borderless, secure) aren’t the only reason the coin is worth so much. Due to its scarcity (and
-                        it’s hard to produce), Bitcoin is often nicknamed ‘Digital Gold’, in reference to ‘classic’
-                        physical gold. Like gold, Bitcoin also has a finite supply of coins available; there will only
-                        ever be 21 million bitcoin. And now you know why the creation of new bitcoins is also called
-                        mining.
-                    </p>
-                </div>
-                <div class="col-12 d-flex justify-content-end">
-                    <div>
-                        <p class="tap">READ MORE</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- related news -->
-            <div class="row">
-                <div class="col-12">
-                    <span class="fw-bold fs-4">Latest Bitcoin News</span>
-                </div>
-                <div class="col-12">
-                    <div class="swiper mySwiper px-3">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
-                                    <div>
-                                        <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
-                                        <div style="height: 10rem; background-color: lightgray;"></div>
-                                        <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
-                                            Bitcoin pundits split over BTC
-                                            floor as Bloomberg analyst eyes
-                                            bounce.</p>
-                                        <div class="tap pt-3" style="color:grey">
-                                            <span>5 mins read</span><span class="ps-1">•</span>
-                                            <span>Dec 03, 2021</span><span class="ps-1">•</span>
-                                            <span class="rounded-pill px-2"
-                                                style="background-color: lightgray; color: gray">BTC</span>
-                                        </div>
-                                        <div class="d-flex justify-content-end pt-4">
-                                            <span class="tap">READ MORE</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
-                                    <div>
-                                        <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
-                                        <div style="height: 10rem; background-color: lightgray;"></div>
-                                        <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
-                                            Bitcoin pundits split over BTC
-                                            floor as Bloomberg analyst eyes
-                                            bounce.</p>
-                                        <div class="tap pt-3" style="color:grey">
-                                            <span>5 mins read</span><span class="ps-1">•</span>
-                                            <span>Dec 03, 2021</span><span class="ps-1">•</span>
-                                            <span class="rounded-pill px-2"
-                                                style="background-color: lightgray; color: gray">BTC</span>
-                                        </div>
-                                        <div class="d-flex justify-content-end pt-4">
-                                            <span class="tap">READ MORE</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
-                                    <div>
-                                        <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
-                                        <div style="height: 10rem; background-color: lightgray;"></div>
-                                        <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
-                                            Bitcoin pundits split over BTC
-                                            floor as Bloomberg analyst eyes
-                                            bounce.</p>
-                                        <div class="tap pt-3" style="color:grey">
-                                            <span>5 mins read</span><span class="ps-1">•</span>
-                                            <span>Dec 03, 2021</span><span class="ps-1">•</span>
-                                            <span class="rounded-pill px-2"
-                                                style="background-color: lightgray; color: gray">BTC</span>
-                                        </div>
-                                        <div class="d-flex justify-content-end pt-4">
-                                            <span class="tap">READ MORE</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
-                                    <div>
-                                        <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
-                                        <div style="height: 10rem; background-color: lightgray;"></div>
-                                        <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
-                                            Bitcoin pundits split over BTC
-                                            floor as Bloomberg analyst eyes
-                                            bounce.</p>
-                                        <div class="tap pt-3" style="color:grey">
-                                            <span>5 mins read</span><span class="ps-1">•</span>
-                                            <span>Dec 03, 2021</span><span class="ps-1">•</span>
-                                            <span class="rounded-pill px-2"
-                                                style="background-color: lightgray; color: gray">BTC</span>
-                                        </div>
-                                        <div class="d-flex justify-content-end pt-4">
-                                            <span class="tap">READ MORE</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
-                                    <div>
-                                        <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
-                                        <div style="height: 10rem; background-color: lightgray;"></div>
-                                        <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
-                                            Bitcoin pundits split over BTC
-                                            floor as Bloomberg analyst eyes
-                                            bounce.</p>
-                                        <div class="tap pt-3" style="color:grey">
-                                            <span>5 mins read</span><span class="ps-1">•</span>
-                                            <span>Dec 03, 2021</span><span class="ps-1">•</span>
-                                            <span class="rounded-pill px-2"
-                                                style="background-color: lightgray; color: gray">BTC</span>
-                                        </div>
-                                        <div class="d-flex justify-content-end pt-4">
-                                            <span class="tap">READ MORE</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
-                                    <div>
-                                        <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
-                                        <div style="height: 10rem; background-color: lightgray;"></div>
-                                        <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
-                                            Bitcoin pundits split over BTC
-                                            floor as Bloomberg analyst eyes
-                                            bounce.</p>
-                                        <div class="tap pt-3" style="color:grey">
-                                            <span>5 mins read</span><span class="ps-1">•</span>
-                                            <span>Dec 03, 2021</span><span class="ps-1">•</span>
-                                            <span class="rounded-pill px-2"
-                                                style="background-color: lightgray; color: gray">BTC</span>
-                                        </div>
-                                        <div class="d-flex justify-content-end pt-4">
-                                            <span class="tap">READ MORE</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-    </div>
 
+        <hr>
 
+        <!-- market page -->
+        <!-- page title -->
+        <div class="row">
+            <div class="col-12 title pt-4">Market</div>
+        </div>
 
+        <!-- sub pages -->
+        <div class="row">
+            <div class="col-12 pt-4 tap-control">
+                <span href="#home" class="tap active me-1">Market Watch</span>
+                <span href="#home" class="tap">My Watchlist</span>
+            </div>
+        </div>
 
-
-
-
-    <div class="row">
-        <div class="col-12 col-md-6 p-2">
-            <div class="card-chart mx-auto">
-                <!-- Custom information -->
-                <div class="about">
-                    <h3>Last 7 Days Profit</h3>
-                    <p class="lead">in USDT</p>
+        <!-- search and sort -->
+        <div class="row">
+            <div class="col-12 pt-5 d-flex justify-content-between">
+                <div class="search">
+                    <i class="fa fa-fw fa-search"></i>
+                    <input type="text" class="form-control form-control-sm" placeholder="Search here">
                 </div>
-                <!-- Canvas for Chart.js -->
-                <canvas id="mycanvas"></canvas>
-                <!-- Custom Axis -->
-                <div class="axis">
-                    <div class="tick">
-                        <span class="day-number">10</span>
-                        <span class="day-name">MON</span>
-                        <span class="value value--this">$26</span>
+                <div class="dropdown">
+                    <span class="tap">Sort by</span>
+                    <span>
+                        <select class="form-select form-select-sm" aria-label="Default select example">
+                            <option value="price" selected>Price (Desc.)</option>
+                            <option value="popular">Popular (Desc.)</option>
+                            <option value="new">New (Desc.)</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- market coin table -->
+        <div class="row">
+            <div class="col-12 mt-4 table-responsive">
+                <table class="table table-hover table-striped table-borderless ">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Name</th>
+                            <th>Market Cap</th>
+                            <th>Price</th>
+                            <th>Vol.</th>
+                            <th colspan="4">% Change (24 hr)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2  align-middle" style="width: 5%"><img
+                                    src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png" alt="Avatar">
+                            </td>
+                            <td class="py-2 align-middle" style="width: 15%"><span class="fs-6">USDT</span><br><span
+                                    style="color:grey">USD Tether</span></td>
+                            <td class="py-2 align-middle" style="width: 20%">$40.84B</td>
+                            <td class="py-2 align-middle" style="width: 20%">
+                                $923.03798295
+                            </td>
+                            <td class="py-2 align-middle" style="width: 12%">$27.14M</td>
+                            <td class="py-2 align-middle" style="width: 12%">
+                                <div class="controlchartsize">
+                                    <canvas id="chartforcoin"></canvas>
+                                </div>
+                            </td>
+                            <td class="py-2 align-middle pe-0" style="width: 3%">
+                                <i class="fa fa-2x fa-caret-up h-auto" style="color:#00b053"></i>
+                            </td>
+                            <td class="py-2 align-middle ps-1" style="width: 9%">
+                                <span style="color:#00b053">4.08%</span>
+                            </td>
+                            <td class="py-2 align-middle" style="width: 4%; color:grey"><i
+                                    class="fa fa-2x fa-plus-circle"></i>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- market watch - bitcoin -->
+        <!-- page title -->
+        <div class="row">
+            <div class="col-12 title pt-4">Bitcoin</div>
+        </div>
+
+        <!-- sub pages -->
+        <div class="row">
+            <div class="col-12 pt-4 tap-control">
+                <span href="#home" class="tap">Market Watch</span>>
+                <span href="#home" class="tap">Bitcoin</span>
+            </div>
+        </div>
+
+        <!-- sub pages -->
+        <div class="row">
+            <div class="col-12 pt-4">
+                <span class="tap">Price</span>
+            </div>
+            <div class="col-12">
+                <span class="fw-bold fs-1 pe-4">$ 36603.029732995</span>
+                <i class="fa fa-caret-up pb-1" style="color:#00b053"></i>
+                <span class="pe-1 fw-bold" style="color:#00b053">4.08%</span>
+                <span class="tap">% Change (24 hr)</span>
+            </div>
+        </div>
+
+        <!-- basic info -->
+        <div class="row py-3 gx-5">
+            <div class="col-12 col-md-4">
+                <div class="card card-info p-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <i class="fa fa-2x fa-coins px-3 py-4"></i>
+                        </div>
+                        <div class="col-md-9">
+                            <div>
+                                <p class="tap my-2">Market Cap</p>
+                                <p class="tap fs-5 mb-0">$693303915863.47</p>
+                                <p class="tap mb-2">30% of crypto market</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tick">
-                        <span class="day-number">11</span>
-                        <span class="day-name">TUE</span>
-                        <span class="value value--this">$14</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card card-info p-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <i class="fa fa-2x fa-coins px-3 py-4"></i>
+                        </div>
+                        <div class="col-md-9">
+                            <div>
+                                <p class="tap my-2">Market Cap</p>
+                                <p class="tap fs-5 mb-0">$693303915863.47</p>
+                                <p class="tap mb-2">30% of crypto market</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tick">
-                        <span class="day-number">12</span>
-                        <span class="day-name">WED</span>
-                        <span class="value value--this">$22</span>
-                    </div>
-                    <div class="tick">
-                        <span class="day-number">13</span>
-                        <span class="day-name">THU</span>
-                        <span class="value value--this">$12</span>
-                    </div>
-                    <div class="tick">
-                        <span class="day-number">14</span>
-                        <span class="day-name">FRI</span>
-                        <span class="value value--this">$20</span>
-                    </div>
-                    <div class="tick">
-                        <span class="day-number">15</span>
-                        <span class="day-name">SAT</span>
-                        <span class="value value--this">$12</span>
-                    </div>
-                    <div class="tick">
-                        <span class="day-number">16</span>
-                        <span class="day-name">SUN</span>
-                        <span class="value value--this">$18</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card card-info p-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <i class="fa fa-2x fa-coins px-3 py-4"></i>
+                        </div>
+                        <div class="col-md-9">
+                            <div>
+                                <p class="tap my-2">Market Cap</p>
+                                <p class="tap fs-5 mb-0">$693303915863.47</p>
+                                <p class="tap mb-2">30% of crypto market</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card card-info p-2">
-        <div class="card-body">
-            <p class="mb-3"><small>Account Total</p></small>
 
-            <h3 class="card-title">$<span class="number" akhi="3400.48">0</span></h3>
+        <!-- Chart -->
+        <div class="row py-3">
+            <div class="col-12 d-flex justify-content-end" style="color:grey">
+                <div>
+                    <p class="tap">Time</p>
+                    <span class="pe-2 fw-bold">1D</span><span class="pe-2 fw-bold">1M</span><span
+                        class="pe-2 fw-bold">1Y</span><span class="fw-bold active">All time</span>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-12 px-4">
+                <canvas id="chartforcoin2"></canvas>
+            </div>
+        </div>
+
+        <!-- description -->
+        <div class="row">
+            <div class="col-12">
+                <span class="fw-bold fs-4">About</span>
+                <p>Bitcoin is the first digital currency that allows users to send and receive money, without the
+                    interference of a central bank or government. Instead, a network of thousands of peers is
+                    controlling the transactions; a decentralized system. Bitcoin’s useful qualities (decentralized,
+                    borderless, secure) aren’t the only reason the coin is worth so much. Due to its scarcity (and
+                    it’s hard to produce), Bitcoin is often nicknamed ‘Digital Gold’, in reference to ‘classic’
+                    physical gold. Like gold, Bitcoin also has a finite supply of coins available; there will only
+                    ever be 21 million bitcoin. And now you know why the creation of new bitcoins is also called
+                    mining.
+                </p>
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+                <div>
+                    <p class="tap">READ MORE</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- related news -->
+        <div class="row">
+            <div class="col-12">
+                <span class="fw-bold fs-4">Latest Bitcoin News</span>
+            </div>
+            <div class="col-12">
+                <div class="swiper mySwiper px-3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div>
+                                    <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                                    <div style="height: 10rem; background-color: lightgray;"></div>
+                                    <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
+                                        Bitcoin pundits split over BTC
+                                        floor as Bloomberg analyst eyes
+                                        bounce.</p>
+                                    <div class="tap pt-3" style="color:grey">
+                                        <span>5 mins read</span><span class="ps-1">•</span>
+                                        <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                        <span class="rounded-pill px-2"
+                                            style="background-color: lightgray; color: gray">BTC</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end pt-4">
+                                        <span class="tap">READ MORE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div>
+                                    <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                                    <div style="height: 10rem; background-color: lightgray;"></div>
+                                    <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
+                                        Bitcoin pundits split over BTC
+                                        floor as Bloomberg analyst eyes
+                                        bounce.</p>
+                                    <div class="tap pt-3" style="color:grey">
+                                        <span>5 mins read</span><span class="ps-1">•</span>
+                                        <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                        <span class="rounded-pill px-2"
+                                            style="background-color: lightgray; color: gray">BTC</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end pt-4">
+                                        <span class="tap">READ MORE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div>
+                                    <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                                    <div style="height: 10rem; background-color: lightgray;"></div>
+                                    <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
+                                        Bitcoin pundits split over BTC
+                                        floor as Bloomberg analyst eyes
+                                        bounce.</p>
+                                    <div class="tap pt-3" style="color:grey">
+                                        <span>5 mins read</span><span class="ps-1">•</span>
+                                        <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                        <span class="rounded-pill px-2"
+                                            style="background-color: lightgray; color: gray">BTC</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end pt-4">
+                                        <span class="tap">READ MORE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div>
+                                    <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                                    <div style="height: 10rem; background-color: lightgray;"></div>
+                                    <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
+                                        Bitcoin pundits split over BTC
+                                        floor as Bloomberg analyst eyes
+                                        bounce.</p>
+                                    <div class="tap pt-3" style="color:grey">
+                                        <span>5 mins read</span><span class="ps-1">•</span>
+                                        <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                        <span class="rounded-pill px-2"
+                                            style="background-color: lightgray; color: gray">BTC</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end pt-4">
+                                        <span class="tap">READ MORE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div>
+                                    <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                                    <div style="height: 10rem; background-color: lightgray;"></div>
+                                    <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
+                                        Bitcoin pundits split over BTC
+                                        floor as Bloomberg analyst eyes
+                                        bounce.</p>
+                                    <div class="tap pt-3" style="color:grey">
+                                        <span>5 mins read</span><span class="ps-1">•</span>
+                                        <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                        <span class="rounded-pill px-2"
+                                            style="background-color: lightgray; color: gray">BTC</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end pt-4">
+                                        <span class="tap">READ MORE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info py-4 px-5 mt-2 mb-5" style="width: 350px">
+                                <div>
+                                    <h4 class="tap my-2" style="color:grey">Brian Quarmby</h4>
+                                    <div style="height: 10rem; background-color: lightgray;"></div>
+                                    <p class="tap fs-5 mb-0 lh-sm pt-3" style="text-align: justify;">
+                                        Bitcoin pundits split over BTC
+                                        floor as Bloomberg analyst eyes
+                                        bounce.</p>
+                                    <div class="tap pt-3" style="color:grey">
+                                        <span>5 mins read</span><span class="ps-1">•</span>
+                                        <span>Dec 03, 2021</span><span class="ps-1">•</span>
+                                        <span class="rounded-pill px-2"
+                                            style="background-color: lightgray; color: gray">BTC</span>
+                                    </div>
+                                    <div class="d-flex justify-content-end pt-4">
+                                        <span class="tap">READ MORE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    </div>
-    </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -833,12 +864,16 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.3.1/chartjs-plugin-annotation.min.js" integrity="sha512-y7WpspnUHkKaewKb/dwPyBDJhigLAA9eH2rdvXGwZonWs/5NpSxKI6ZG2TWQVo+JY+tfNdgPgjcTGDhG/GMriA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.3.1/chartjs-plugin-annotation.min.js"
+        integrity="sha512-y7WpspnUHkKaewKb/dwPyBDJhigLAA9eH2rdvXGwZonWs/5NpSxKI6ZG2TWQVo+JY+tfNdgPgjcTGDhG/GMriA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
 
         //sidebar display-hide switch
         function w3_open() {
             document.getElementById("sidebar").classList.toggle("hidesidebar");
+            document.getElementById("content").classList.toggle("content-close-sidebar");
         }
 
 
@@ -924,7 +959,7 @@
             },
             padding: {
                 bottom: 20
-            },            
+            },
             position: {
                 x: 'center',
                 y: 'end'
@@ -943,7 +978,7 @@
             yValue: point1.yValue,
         };
         const annotation3 = {
-            type: 'point',            
+            type: 'point',
             backgroundColor: 'rgba(87, 174, 149, 1)',
             borderColor: "rgba(87, 174, 149, 1)",
             pointStyle: 'circle',
@@ -962,7 +997,7 @@
             },
             padding: {
                 bottom: 20
-            },            
+            },
             position: {
                 x: 'center',
                 y: 'end'
@@ -970,7 +1005,7 @@
             xValue: point2.xValue,
             yAdjust: -6,
             yValue: point2.yValue,
-            
+
         };
         const annotation5 = {
             type: 'point',
@@ -982,7 +1017,7 @@
             yValue: point2.yValue,
         };
         const annotation6 = {
-            type: 'point',            
+            type: 'point',
             backgroundColor: 'rgba(87, 174, 149, 1)',
             borderColor: "rgba(87, 174, 149, 1)",
             pointStyle: 'circle',
@@ -990,7 +1025,7 @@
             xValue: point2.xValue,
             yValue: point2.yValue,
         };
-        
+
         var config2 = {
             type: 'line',
             data: {
@@ -1024,7 +1059,7 @@
                         beginAtZero: true
                     }
                 },
-                plugins: {                   
+                plugins: {
                     legend: {
                         display: false,
                     },
@@ -1041,13 +1076,13 @@
                     }
                 }
             },
-            plugins:[{
-                beforeDraw: function(chart, args, options){
-                        const { ctx } = chart;
-                        ctx.shadowColor = "rgba(207, 253, 240, 1)";
-                        ctx.shadowBlur = 8;
-                        ctx.shadowOffsetY = 20;
-                },                
+            plugins: [{
+                beforeDraw: function (chart, args, options) {
+                    const { ctx } = chart;
+                    ctx.shadowColor = "rgba(207, 253, 240, 1)";
+                    ctx.shadowBlur = 8;
+                    ctx.shadowOffsetY = 20;
+                },
             }]
         };
         window.chart = new Chart(canvas2, config2);
@@ -1128,6 +1163,23 @@
                 clickable: true,
             },
         });
+
+        var cards = document.querySelectorAll('.flip-card-inner');
+        var selectbots = document.querySelectorAll('#select-bot');
+        var innerselectcircle = document.querySelectorAll('.inner-select-circle')
+        var readmore = document.querySelectorAll('.readmore')        
+        var readless = document.querySelectorAll('.readless')
+        for(let i = 0; i < cards.length; i++){
+            readmore[i].addEventListener( 'click', function() {
+                cards[i].classList.toggle('is-flipped');
+            });
+            readless[i].addEventListener( 'click', function() {
+                cards[i].classList.toggle('is-flipped');
+            });
+            selectbots[i].addEventListener( 'click', function() {
+                innerselectcircle[i].classList.toggle('bot-selected-turn-green');
+            });
+        }
     </script>
 </body>
 
