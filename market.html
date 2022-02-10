@@ -90,19 +90,16 @@
                     <div class="flip-card mx-auto">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <div class="rounded-box"
-                                    style="width: 400px; height: 550px; border: 2px solid #57AE95; box-shadow: 4px 4px 0px #57AE95; background-color: white;">
-                                    <div id="select-bot" class="d-flex justify-content-between" style="padding: 33px 24px; border-bottom: 2px solid #57AE95; background: #CFFDF0; border-radius: 12px 12px 0px 0px">
-                                        <span class="align-middle"
-                                            style="font-size: 37px; color: #439A81; line-height: 21px;">Tanjiro</span>
-                                        <div class="select-bot-circle">
-                                            <span class="outer-select-circle"></span>
-                                            <span class="inner-select-circle"></span>
-                                        </div>
+                                <div class="rounded-box bot-card-tether">
+                                    <div class="d-flex justify-content-between card-component-top" >
+                                        <span class="align-middle">Tanjiro</span>
+                                        <label class="bot-select-circle">
+                                            <input type="radio" checked="checked" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>
                                     </div>
-                                    <div style="padding: 20px; height: 461px; position: relative;">
-                                        <span class="badge rounded-pill tap"
-                                            style="background-color: #FFD6B0; color: #CC782B; font-size: 16px;">Moderate</span>
+                                    <div class="card-component-bottom">
+                                        <span class="badge rounded-pill tap moderate">Moderate</span>
                                         <div>
                                             <canvas id="chartforcoin2" class="mx-auto"
                                                 style="margin-top: 30px; margin-bottom: 30px;"></canvas>
@@ -110,8 +107,7 @@
                                         <div class="text-center d-flex flex-row  justify-content-center">
                                             <div class="pe-3">
                                                 <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
-                                                <div><img
-                                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                                <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
                                                         alt="Avatar" style="width: 35px;"></div>
                                             </div>
                                             <div>
@@ -123,39 +119,32 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-end"
-                                            style="color: #57AE95; position: absolute; bottom: 20; right: 20">
-                                            <span class="tap readmore" style="line-height: 16px; cursor:pointer">READ MORE</p>
+                                            style=" position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readmore readtoggle">READ MORE</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="flip-card-back">
-                                <div class="rounded-box"
-                                    style="width: 400px; height: 550px; border: 2px solid #57AE95; box-shadow: 4px 4px 0px #57AE95; background-color: white;">
-                                    <div class="d-flex justify-content-between"
-                                        style="padding: 33px 24px; border-bottom: 2px solid #57AE95; background: #CFFDF0; border-radius: 12px 12px 0px 0px">
-                                        <span class="align-middle"
-                                            style="font-size: 37px; color: #439A81; line-height: 21px;">Tanjiro</span>
+                                <div class="rounded-box bot-card-tether">
+                                    <div class="d-flex justify-content-between card-component-top" >
+                                        <span class="align-middle">Tanjiro</span>
                                         <div class="select-bot-circle">
-                                            <span
-                                                style="border-radius: 34px; height: 38px; width: 38px; border: 2px solid black; position: absolute; top: -9px; left:-9px; background-color: white; box-shadow: 2px 2px 0px black">
-                                            </span>
-                                            <span style="border-radius: 34px; height: 20px; width: 20px; border: 2px solid black; position: absolute; background-color: 
-                                #4E9E7E;"> </span>
+                                            <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                                        alt="Avatar" style="width: 38px; position: absolute; top: -9px; left:-9px; ">
                                         </div>
                                     </div>
-                                    <div style="padding: 20px; height: 461px; position: relative;">
+                                    <div class="card-component-bottom">
                                         <div class="d-flex flex-row  justify-content-center">
-                                            <div
-                                                style="width: 310px; font-size: 22px; font-weight: 400; line-height: 29px; text-align: justify; position: absolute; top: 40%; transform: translateY(-50%);">
+                                            <div class="card-component-paragraph">
                                                 <p>Conservative DCA strategy which buys tokens at lowest possible
                                                     support. Less frequent buys ensure capital preservation when the
                                                     best buying opportunity arises.</p>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-end"
-                                            style="color: #57AE95; position: absolute; bottom: 20; right: 20">
-                                            <span class="tap readless" style="line-height: 16px; cursor:pointer">READ LESS</p>
+                                            style=" position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readless readtoggle">READ LESS</p>
                                         </div>
                                     </div>
                                 </div>
@@ -163,41 +152,178 @@
                         </div>
                     </div>
                 </div>
-                
-                
+                <div class="col-12 col-md-4">
+                    <div class="flip-card mx-auto">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="rounded-box bot-card-bitcoin">
+                                    <div class="d-flex justify-content-between card-component-top" >
+                                        <span class="align-middle">Tanjiro</span>
+                                        <label class="bot-select-circle">
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>                                        
+                                    </div>
+                                    <div class="card-component-bottom">
+                                        <span class="badge rounded-pill tap aggressive">Aggressive</span>
+                                        <div>
+                                            <canvas id="chartforcoin2" class="mx-auto"
+                                                style="margin-top: 30px; margin-bottom: 30px;"></canvas>
+                                        </div>
+                                        <div class="text-center d-flex flex-row justify-content-center">
+                                            <div class="pe-3">
+                                                <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
+                                                <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
+                                                        alt="Avatar" style="width: 35px;"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ps-3 tap" style="color: gray; padding-bottom: 5px;">
+                                                    PERFORMANCE <i class="fa fa-fw fa-question-circle"></i></div>
+                                                <div class="ps-3"
+                                                    style="font-size: 37px; color: #23C992; line-height: 40px; border-left: 1px solid #919191;">
+                                                    76.42%</div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end"
+                                            style=" position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readmore readtoggle">READ MORE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="rounded-box bot-card-bitcoin">
+                                    <div class="d-flex justify-content-between card-component-top" >
+                                        <span class="align-middle">Tanjiro</span>
+                                        <div class="select-bot-circle">
+                                            <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
+                                                        alt="Avatar" style="width: 38px; position: absolute; top: -9px; left:-9px; ">
+                                        </div>
+                                    </div>
+                                    <div class="card-component-bottom">
+                                        <div class="d-flex flex-row  justify-content-center">
+                                            <div class="card-component-paragraph">
+                                                <p>Conservative DCA strategy which buys tokens at lowest possible
+                                                    support. Less frequent buys ensure capital preservation when the
+                                                    best buying opportunity arises.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end"
+                                            style=" position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readless readtoggle">READ LESS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="flip-card mx-auto">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="rounded-box bot-card-bitcoin">
+                                    <div class="d-flex justify-content-between card-component-top" >
+                                        <span class="align-middle">Tanjiro</span>
+                                        <label class="bot-select-circle">
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                        </label>                                                                                
+                                    </div>
+                                    <div class="card-component-bottom">
+                                        <span class="badge rounded-pill tap conservative">Conservative</span>
+                                        <div>
+                                            <canvas id="chartforcoin2" class="mx-auto"
+                                                style="margin-top: 30px; margin-bottom: 30px;"></canvas>
+                                        </div>
+                                        <div class="text-center d-flex flex-row  justify-content-center">
+                                            <div class="pe-3">
+                                                <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
+                                                <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
+                                                        alt="Avatar" style="width: 35px;"></div>
+                                            </div>
+                                            <div>
+                                                <div class="ps-3 tap" style="color: gray; padding-bottom: 5px;">
+                                                    PERFORMANCE <i class="fa fa-fw fa-question-circle"></i></div>
+                                                <div class="ps-3"
+                                                    style="font-size: 37px; color: #23C992; line-height: 40px; border-left: 1px solid #919191;">
+                                                    76.42%</div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end"
+                                            style=" position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readmore readtoggle">READ MORE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="rounded-box bot-card-bitcoin">
+                                    <div class="d-flex justify-content-between card-component-top" >
+                                        <span class="align-middle">Tanjiro</span>
+                                        <div class="select-bot-circle">
+                                            <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
+                                                        alt="Avatar" style="width: 38px; position: absolute; top: -9px; left:-9px; ">
+                                        </div>
+                                    </div>
+                                    <div class="card-component-bottom">
+                                        <div class="d-flex flex-row  justify-content-center">
+                                            <div class="card-component-paragraph">
+                                                <p>Conservative DCA strategy which buys tokens at lowest possible
+                                                    support. Less frequent buys ensure capital preservation when the
+                                                    best buying opportunity arises.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end"
+                                            style=" position: absolute; bottom: 20; right: 20">
+                                            <span class="tap readless readtoggle">READ LESS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-12">
+                <div class="d-flex justify-content-end pt-5">
+                    <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
+                        <img src="pointer.png" class="pointer"  style=" transform: rotate(180deg); margin-right: 15px;" alt="back"> 
+                            BACK
+                        </div>
+                    <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: #E6EF59">
+                        NEXT
+                        <img src="pointer.png" class="pointer" style=" margin-left: 15px; " alt="next">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- trading amount -->
         <div class="row  justify-content-center">
-            <div class="col-8 pt-5">
-                <div class="rounded-box" style="box-shadow: 4px 4px 0px black;">
-                    <div class="d-flex "
-                        style="padding: 15px 50px; background: #F9F9FF; border-radius: 12px 12px 0px 0px">
+            <div class="col-12 col-lg-8 pt-5">
+                <div class="rounded-box black-shadow">
+                    <div class="step-box-top">
                         <span class="align-middle" style="font-size: 30px; line-height: 39px;">Trading Amount</span>
                     </div>
-                    <div style="padding: 30px 50px; background-color: white; border-radius: 0px 0px 12px 12px">
+                    <div class="step-box-bottom">
                         <div>
-                            <div class="input-group" style="width: 500px; ">
-                                <span class="input-group-text" id="trading-amount"
-                                    style=" border-radius: 12px 0px 0px 12px; background-color: #E6EF59; padding: 5px 30px; border: 2px solid #000000;">$</span>
-                                <input type="text" class="form-control tap"
-                                    style="border-radius: 0px 12px 12px 0px; border: 2px solid #000000; background-color: #EEEEFF; color: #7B7B9F;"
-                                    placeholder="2,000" aria-label="Username" aria-describedby="trading-amount">
+                            <div class="input-group" style="max-width: 500px; ">
+                                <span class="input-group-text trading-amount" id="trading-amount">$</span>
+                                <input type="text" class="form-control tap trading-amount-input" placeholder="2,000" aria-label="Username" aria-describedby="trading-amount">
                             </div>
                             <div>
-                                <span style="margin-left: 72px; margin-top: 30px;">The minimum trading amount is
-                                    $2,000</span>
+                                <span style="margin-top: 30px;">*The minimum trading amount is $2,000</span>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-end" style="padding-top: 100px;">
-                            <div class="yellowbox align-middle"
-                                style="margin-right: 20px; background-color: white; padding: 12px 25px;"><img
-                                    src="pointer.png"
-                                    style="height: 25px; width: 25px; transform: rotate(180deg); margin-right: 15px; margin-bottom: 2px;"
-                                    alt="back"> BACK</div>
-                            <div class="yellowbox align-middle" style="padding: 12px 25px;">NEXT<img src="pointer.png"
-                                    style="height: 25px; width: 25px; margin-left: 15px; margin-bottom: 2px" alt="next">
+                        <div class="d-flex justify-content-end pt-5">
+                            <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
+                                <img src="pointer.png" class="pointer"  style=" transform: rotate(180deg); margin-right: 15px;" alt="back"> 
+                                    BACK
+                                </div>
+                            <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: #E6EF59">
+                                NEXT
+                                <img src="pointer.png" class="pointer" style=" margin-left: 15px; " alt="next">
                             </div>
                         </div>
                     </div>
@@ -207,25 +333,23 @@
 
         <!-- check submission -->
         <div class="row  justify-content-center">
-            <div class="col-8 pt-5">
-                <div class="rounded-box" style="box-shadow: 4px 4px 0px black;">
-                    <div class="d-flex "
-                        style="padding: 15px 50px; background: #F9F9FF; border-radius: 12px 12px 0px 0px">
+            <div class="col-12 col-lg-8 pt-5">
+                <div class="rounded-box black-shadow">
+                    <div class="step-box-top">
                         <span class="align-middle" style="font-size: 30px; line-height: 39px;">Check
                             Submission</span>
                     </div>
-                    <div style="padding: 30px 50px; background-color: white; border-radius: 0px 0px 12px 12px">
+                    <div class="step-box-bottom">
                         <div>
                             <span class="align-middle"
                                 style="font-size: 37px; color: #439A81; margin-right: 15px;">Tanjiro</span>
                             <img class=" align-middle"
                                 src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png" alt="Avatar"
                                 style="width: 35px; margin-right: 15px">
-                            <span class="badge rounded-pill align-middle"
-                                style="background-color: #FFD6B0; color: #CC782B; font-size: 16px;">Moderate</span>
+                            <span class="badge rounded-pill align-middle moderate">Moderate</span>
                         </div>
                         <div>
-                            <p style="max-width: 550px; font-weight: 400; font-size: 22px; line-height: 29px;">
+                            <p class="coin-description">
                                 Conservative DCA strategy which buys tokens at lowest possible support. Less
                                 frequent buys ensure capital preservation when the best buying opportunity arises.
                             </p>
@@ -240,14 +364,14 @@
                         <div class="d-flex justify-content-end">
                             <span class="tap active">EDIT</span>
                         </div>
-                        <div class="d-flex justify-content-end" style="padding-top: 100px;">
-                            <div class="yellowbox align-middle"
-                                style="margin-right: 20px; background-color: white; padding: 12px 25px;"><img
-                                    src="pointer.png"
-                                    style="height: 25px; width: 25px; transform: rotate(180deg); margin-right: 15px; margin-bottom: 2px;"
-                                    alt="back"> BACK</div>
-                            <div class="yellowbox align-middle" style="padding: 12px 25px;">NEXT<img src="pointer.png"
-                                    style="height: 25px; width: 25px; margin-left: 15px; margin-bottom: 2px" alt="next">
+                        <div class="d-flex justify-content-end pt-5">
+                            <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
+                                <img src="pointer.png" class="pointer"  style=" transform: rotate(180deg); margin-right: 15px;" alt="back"> 
+                                    BACK
+                                </div>
+                            <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: #E6EF59">
+                                NEXT
+                                <img src="pointer.png" class="pointer" style=" margin-left: 15px; " alt="next">
                             </div>
                         </div>
                     </div>
@@ -290,10 +414,18 @@
                     </div>
                     <div class="collapse" id="collapseExample">
                         <div class="filter-bottom">
-                            <div class="row">
-                                <div class="col-12 col-md-3" style="position: relative;">
+                            <div class="row gy-3">
+                                <div class="col-6 col-lg-3" style="position: relative;">
                                     <p class="tap">Bot Type</p>
-                                    <div class="rounded-box" style="background: #EEEEFF">
+                                    <div class="dropdown">
+                                        <button class="dropbtn">Dropdown</button>
+                                        <div class="dropdown-content">
+                                        <a href="#">Link 1</a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#">Link 3</a>
+                                        </div>
+                                      </div>
+                                    <!-- <div class="rounded-box overlay" style="background: #EEEEFF; max-width: 300px; ">
                                         <div class="subfilter-top d-flex justify-content-between">
                                             <div>
                                                 <span class="tap align-top">All Bots </span>
@@ -315,11 +447,19 @@
                                                     Bot</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="col-12 col-md-3" style="position: relative;">
+                                <div class="col-6 col-lg-3" style="position: relative;">
                                     <p class="tap">Pairs</p>
-                                    <div class="rounded-box" style="background: #EEEEFF">
+                                    <div class="dropdown">
+                                        <button class="dropbtn">Dropdown</button>
+                                        <div class="dropdown-content">
+                                        <a href="#">Link 1</a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#">Link 3</a>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="rounded-box overlay" style="background: #EEEEFF; min-width: 20vw; ">
                                         <div class="subfilter-top d-flex justify-content-between">
                                             <div>
                                                 <span class="tap align-top">All Pairs </span>
@@ -341,11 +481,11 @@
                                                     Bot</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-lg-6" style="display: inline-block;">
                                     <p class="tap">Strategy</p>
-                                    <div class="row gx-3 text-center">
+                                    <div class="row gx-3 text-center" >
                                         <div class="col-2">
                                             <div class="filterbutton" style="background: #EEEEFF;">
                                                 <div class="subfilter-top">
@@ -1165,10 +1305,11 @@
         });
 
         var cards = document.querySelectorAll('.flip-card-inner');
-        var selectbots = document.querySelectorAll('#select-bot');
+        var selectbots = document.querySelectorAll('.select-bot-circle');
         var innerselectcircle = document.querySelectorAll('.inner-select-circle')
         var readmore = document.querySelectorAll('.readmore')        
         var readless = document.querySelectorAll('.readless')
+
         for(let i = 0; i < cards.length; i++){
             readmore[i].addEventListener( 'click', function() {
                 cards[i].classList.toggle('is-flipped');
