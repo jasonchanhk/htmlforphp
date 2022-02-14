@@ -18,34 +18,49 @@
 </head>
 
 <body>
-    <!-- topbar -->
-    <nav class="navbar navbar-light bg-light align-middle sticky-top d-flex justify-content-between">
-        <div class="sidebar-switch">
-            <span>
-                <i class="fa fa-fw fa-bars" onclick="w3_open()"></i>
-            </span>
-        </div>
-        <div>
-            <span class="username">
-                Username
-                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-                    alt="userphoto">
-            </span>
-        </div>
-    </nav>
+    
 
     <!-- sidebar -->
     <div class="sidebar" id="sidebar">
-        <a class="active" href="#home"><i class="fa fa-fw fa-home"></i></a>
-        <a href="#services"><i class="fa fa-fw fa-wrench"></i></a>
-        <a href="#clients"><i class="fa fa-fw fa-user"></i></a>
-        <a href="#contact"><i class="fa fa-fw fa-envelope"></i></a>
+        <div class="sidebar-switch" onclick="w3_open()">
+            <span>
+                <img src="blokbot-white-1.png" alt="Blokbot dashboard">
+                <i class="fa fa-fw fa-bars"></i>
+            </span>
+        </div>
+        <a class="active"><div class="sidebar-item-center"><i class="fas fa-home"></i><span>Dashboard</span></div></a>
+        <a><div class="sidebar-item-center"><i class="fas fa-wrench"></i><span>Bots</span></div></a>
+        <a><div class="sidebar-item-center"><i class="fas fa-user"></i><span>Market</span></div></a>
+        <a><div class="sidebar-item-center"><i class="fas fa-envelope"></i><span>News Feed</span></div></a>
+        <div class="sidebar-sector-blue">
+            <div class="tap">HELP<i class="fas fa-question-circle"></i></div>      
+            <div class="tap">LOGOUT<i class="fas fa-sign-out-alt"></i></div>
+        </div>
+        <div class="sidebar-lower-sector">
+            <div class="tap">© blokbot 2021 </div>         
+            <div>
+                <span class="tap">T&Cs</span>|
+                <span class="tap">Privacy</span>|
+                <span class="tap" style="margin: 0;">Cookies</span>
+            </div>
+        </div>
     </div>
 
     <!-- content -->
     <div class="content" id="content">
-        <div class="px-4">
+        <!-- topbar -->
+        <nav class="navbar navbar-light bg-light align-middle sticky-top d-flex justify-content-end">
+            <div>
+                <span class="username">
+                    Username
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                        alt="userphoto">
+                </span>
+            </div>
+        </nav>
 
+        <!-- content container -->
+        <div class="content-container">
             <!-- Create bot page -->
             <!-- page title -->
             <div class="row">
@@ -91,7 +106,7 @@
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <div class="rounded-box bot-card-tether">
-                                    <div class="d-flex justify-content-between card-component-top" >
+                                    <div class="d-flex justify-content-between card-component-top">
                                         <span class="align-middle">Tanjiro</span>
                                         <label class="bot-select-circle">
                                             <input type="radio" checked="checked" name="radio">
@@ -107,7 +122,8 @@
                                         <div class="text-center d-flex flex-row  justify-content-center">
                                             <div class="pe-3">
                                                 <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
-                                                <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
+                                                <div><img
+                                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
                                                         alt="Avatar" style="width: 35px;"></div>
                                             </div>
                                             <div>
@@ -127,11 +143,12 @@
                             </div>
                             <div class="flip-card-back">
                                 <div class="rounded-box bot-card-tether">
-                                    <div class="d-flex justify-content-between card-component-top" >
+                                    <div class="d-flex justify-content-between card-component-top">
                                         <span class="align-middle">Tanjiro</span>
                                         <div class="select-bot-circle">
                                             <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/825.png"
-                                                        alt="Avatar" style="width: 38px; position: absolute; top: -9px; left:-9px; ">
+                                                alt="Avatar"
+                                                style="width: 38px; position: absolute; top: -9px; left:-9px; ">
                                         </div>
                                     </div>
                                     <div class="card-component-bottom">
@@ -157,12 +174,12 @@
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <div class="rounded-box bot-card-bitcoin">
-                                    <div class="d-flex justify-content-between card-component-top" >
+                                    <div class="d-flex justify-content-between card-component-top">
                                         <span class="align-middle">Tanjiro</span>
                                         <label class="bot-select-circle">
                                             <input type="radio" name="radio">
                                             <span class="checkmark"></span>
-                                        </label>                                        
+                                        </label>
                                     </div>
                                     <div class="card-component-bottom">
                                         <span class="badge rounded-pill tap aggressive">Aggressive</span>
@@ -173,7 +190,8 @@
                                         <div class="text-center d-flex flex-row justify-content-center">
                                             <div class="pe-3">
                                                 <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
-                                                <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
+                                                <div><img
+                                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
                                                         alt="Avatar" style="width: 35px;"></div>
                                             </div>
                                             <div>
@@ -193,11 +211,12 @@
                             </div>
                             <div class="flip-card-back">
                                 <div class="rounded-box bot-card-bitcoin">
-                                    <div class="d-flex justify-content-between card-component-top" >
+                                    <div class="d-flex justify-content-between card-component-top">
                                         <span class="align-middle">Tanjiro</span>
                                         <div class="select-bot-circle">
                                             <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
-                                                        alt="Avatar" style="width: 38px; position: absolute; top: -9px; left:-9px; ">
+                                                alt="Avatar"
+                                                style="width: 38px; position: absolute; top: -9px; left:-9px; ">
                                         </div>
                                     </div>
                                     <div class="card-component-bottom">
@@ -223,12 +242,12 @@
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <div class="rounded-box bot-card-bitcoin">
-                                    <div class="d-flex justify-content-between card-component-top" >
+                                    <div class="d-flex justify-content-between card-component-top">
                                         <span class="align-middle">Tanjiro</span>
                                         <label class="bot-select-circle">
                                             <input type="radio" name="radio">
                                             <span class="checkmark"></span>
-                                        </label>                                                                                
+                                        </label>
                                     </div>
                                     <div class="card-component-bottom">
                                         <span class="badge rounded-pill tap conservative">Conservative</span>
@@ -239,7 +258,8 @@
                                         <div class="text-center d-flex flex-row  justify-content-center">
                                             <div class="pe-3">
                                                 <div class="tap" style="color: gray; padding-bottom: 10px">TRADES</div>
-                                                <div><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
+                                                <div><img
+                                                        src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
                                                         alt="Avatar" style="width: 35px;"></div>
                                             </div>
                                             <div>
@@ -259,11 +279,12 @@
                             </div>
                             <div class="flip-card-back">
                                 <div class="rounded-box bot-card-bitcoin">
-                                    <div class="d-flex justify-content-between card-component-top" >
+                                    <div class="d-flex justify-content-between card-component-top">
                                         <span class="align-middle">Tanjiro</span>
                                         <div class="select-bot-circle">
                                             <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1.png"
-                                                        alt="Avatar" style="width: 38px; position: absolute; top: -9px; left:-9px; ">
+                                                alt="Avatar"
+                                                style="width: 38px; position: absolute; top: -9px; left:-9px; ">
                                         </div>
                                     </div>
                                     <div class="card-component-bottom">
@@ -283,14 +304,16 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="col-12">
                 <div class="d-flex justify-content-end pt-5">
-                    <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
-                        <img src="pointer.png" class="pointer"  style=" transform: rotate(180deg); margin-right: 15px;" alt="back"> 
-                            BACK
-                        </div>
+                    <div class="yellowbox align-middle"
+                        style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
+                        <img src="pointer.png" class="pointer" style=" transform: rotate(180deg); margin-right: 15px;"
+                            alt="back">
+                        BACK
+                    </div>
                     <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: #E6EF59">
                         NEXT
                         <img src="pointer.png" class="pointer" style=" margin-left: 15px; " alt="next">
@@ -310,17 +333,20 @@
                         <div>
                             <div class="input-group" style="max-width: 500px; ">
                                 <span class="input-group-text trading-amount" id="trading-amount">$</span>
-                                <input type="text" class="form-control tap trading-amount-input" placeholder="2,000" aria-label="Username" aria-describedby="trading-amount">
+                                <input type="text" class="form-control tap trading-amount-input" placeholder="2,000"
+                                    aria-label="Username" aria-describedby="trading-amount">
                             </div>
                             <div>
                                 <span style="margin-top: 30px;">*The minimum trading amount is $2,000</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end pt-5">
-                            <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
-                                <img src="pointer.png" class="pointer"  style=" transform: rotate(180deg); margin-right: 15px;" alt="back"> 
-                                    BACK
-                                </div>
+                            <div class="yellowbox align-middle"
+                                style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
+                                <img src="pointer.png" class="pointer"
+                                    style=" transform: rotate(180deg); margin-right: 15px;" alt="back">
+                                BACK
+                            </div>
                             <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: #E6EF59">
                                 NEXT
                                 <img src="pointer.png" class="pointer" style=" margin-left: 15px; " alt="next">
@@ -365,10 +391,12 @@
                             <span class="tap active">EDIT</span>
                         </div>
                         <div class="d-flex justify-content-end pt-5">
-                            <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
-                                <img src="pointer.png" class="pointer"  style=" transform: rotate(180deg); margin-right: 15px;" alt="back"> 
-                                    BACK
-                                </div>
+                            <div class="yellowbox align-middle"
+                                style="padding: 12px 25px; background-color: white; margin-right: 20px; ">
+                                <img src="pointer.png" class="pointer"
+                                    style=" transform: rotate(180deg); margin-right: 15px;" alt="back">
+                                BACK
+                            </div>
                             <div class="yellowbox align-middle" style="padding: 12px 25px; background-color: #E6EF59">
                                 NEXT
                                 <img src="pointer.png" class="pointer" style=" margin-left: 15px; " alt="next">
@@ -401,129 +429,87 @@
         <!-- filter -->
         <div class="row">
             <div class="col-12 pt-5">
-                <div class="rounded-box">
+                <div class="rounded-box" type="button">
                     <div class="filter-top d-flex justify-content-between">
                         <div>
                             <span class="tap align-middle">FILTER <img class="mb-1" style="height: 18px; width: 18px"
                                     src="filter.png" alt="removefilter"></span>
                         </div>
-                        <div class="text-center">
-                            <img style="height: 16px; width: 28px" src="1178604.png" alt="showrestfilter" type="button"
-                                data-bs-toggle="collapse" class="my-1" data-bs-target="#collapseExample">
+                        <div>
+                            <img style="height: 16px; width: 28px" src="1178604.png" alt="showrestfilter" class="my-1">
                         </div>
                     </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="filter-bottom">
-                            <div class="row gy-3">
-                                <div class="col-6 col-lg-3" style="position: relative;">
-                                    <p class="tap">Bot Type</p>
-                                    <div class="dropdown">
-                                        <button class="dropbtn">Dropdown</button>
-                                        <div class="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                        </div>
-                                      </div>
-                                    <!-- <div class="rounded-box overlay" style="background: #EEEEFF; max-width: 300px; ">
-                                        <div class="subfilter-top d-flex justify-content-between">
-                                            <div>
-                                                <span class="tap align-top">All Bots </span>
-                                            </div>
-                                            <div class="text-center">
-                                                <img style="height: 8px; width: 16px" src="1178604.png"
-                                                    alt="showrestfilter" type="button" data-bs-toggle="collapse"
-                                                    class="mt-2" data-bs-target="#collapsebottype">
-                                            </div>
-                                        </div>
-                                        <div class="collapse" id="collapsebottype">
-                                            <div class="subfilter-bottom">
-                                                <span class="tap filterblock"
-                                                    style="border-top: 2px solid black;">Bitcoin Bot</span>
-                                                <span class="tap filterblock">Ethereum Bot</span>
-                                                <span class="tap filterblock">RSI Bot</span>
-                                                <span class="tap filterblock"
-                                                    style="border-radius: 0px 0px 12px 12px;">DCA
-                                                    Bot</span>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                    <div class="filter-bottom">
+                        <div class="row gy-3">
+                            <div class="col-6 col-lg-3" style="position: relative;">
+                                <p class="tap">Bot Type</p>
+                                <div class="dropdown">
+                                    <button class="dropbtn d-flex justify-content-between">
+                                        All Bots
+                                        <img style="height: 8px; width: 16px" src="1178604.png" alt="showrestfilter"
+                                            class="mt-2 align-middle">
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a>Bitcoin Bot</a>
+                                        <a>Ethereum Bot</a>
+                                        <a>RSI Bot</a>
+                                        <a>DCA Bot</a>
+                                    </div>
                                 </div>
-                                <div class="col-6 col-lg-3" style="position: relative;">
-                                    <p class="tap">Pairs</p>
-                                    <div class="dropdown">
-                                        <button class="dropbtn">Dropdown</button>
-                                        <div class="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
+                            </div>
+                            <div class="col-6 col-lg-3" style="position: relative;">
+                                <p class="tap">Pairs</p>
+                                <div class="dropdown">
+                                    <button class="dropbtn d-flex justify-content-between">
+                                        All Pairs
+                                        <img style="height: 8px; width: 16px" src="1178604.png" alt="showrestfilter"
+                                            class="mt-2 align-middle">
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a>Bitcoin Bot</a>
+                                        <a>Ethereum Bot</a>
+                                        <a>RSI Bot</a>
+                                        <a>DCA Bot</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6" style="display: inline-block;">
+                                <p class="tap">Strategy</p>
+                                <div class="row gx-3 text-center">
+                                    <div class="col-2">
+                                        <div class="filterbutton" style="background: #EEEEFF;">
+                                            
+                                                <div>
+                                                    <span class="tap align-top">All</span>
+                                                </div>
+                                            
                                         </div>
                                     </div>
-                                    <!-- <div class="rounded-box overlay" style="background: #EEEEFF; min-width: 20vw; ">
-                                        <div class="subfilter-top d-flex justify-content-between">
-                                            <div>
-                                                <span class="tap align-top">All Pairs </span>
-                                            </div>
-                                            <div class="text-center">
-                                                <img style="height: 8px; width: 16px" src="1178604.png"
-                                                    alt="showrestfilter" type="button" data-bs-toggle="collapse"
-                                                    class="mt-2" data-bs-target="#collapsepairs">
-                                            </div>
-                                        </div>
-                                        <div class="collapse" id="collapsepairs">
-                                            <div class="subfilter-bottom">
-                                                <span class="tap filterblock"
-                                                    style="border-top: 2px solid black;">Bitcoin Bot</span>
-                                                <span class="tap filterblock">Ethereum Bot</span>
-                                                <span class="tap filterblock">RSI Bot</span>
-                                                <span class="tap filterblock"
-                                                    style="border-radius: 0px 0px 12px 12px;;">DCA
-                                                    Bot</span>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                </div>
-                                <div class="col-12 col-lg-6" style="display: inline-block;">
-                                    <p class="tap">Strategy</p>
-                                    <div class="row gx-3 text-center" >
-                                        <div class="col-2">
-                                            <div class="filterbutton" style="background: #EEEEFF;">
-                                                <div class="subfilter-top">
-                                                    <div>
-                                                        <span class="tap align-top">All</span>
-                                                    </div>
+                                    <div class="col-4">
+                                        <div class="filterbutton"
+                                            style="background: #FFFCDD; border-color: #8E810D;color: #8E810D">
+                                            
+                                                <div>
+                                                    <span class="tap align-top">Conservative</span>
                                                 </div>
-                                            </div>
                                         </div>
-                                        <div class="col-4">
-                                            <div class="filterbutton"
-                                                style="background: #FFFCDD; border-color: #8E810D;color: #8E810D">
-                                                <div class="subfilter-top">
-                                                    <div>
-                                                        <span class="tap align-top">Conservative</span>
-                                                    </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="filterbutton"
+                                            style="background: #FFE4CC; border-color: #995C25;color: #995C25">
+                                            
+                                                <div>
+                                                    <span class="tap align-top">Moderate</span>
                                                 </div>
-                                            </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div class="filterbutton"
-                                                style="background: #FFE4CC; border-color: #995C25;color: #995C25">
-                                                <div class="subfilter-top">
-                                                    <div>
-                                                        <span class="tap align-top">Moderate</span>
-                                                    </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="filterbutton"
+                                            style="background: #FFD3D3; border-color: #961414;color: #961414">
+                                            
+                                                <div>
+                                                    <span class="tap align-top">Aggressive</span>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="filterbutton"
-                                                style="background: #FFD3D3; border-color: #961414;color: #961414">
-                                                <div class="subfilter-top">
-                                                    <div>
-                                                        <span class="tap align-top">Aggressive</span>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -536,37 +522,29 @@
 
         <!-- date and sort -->
         <div class="row">
-            <div class="col-12 pt-5 d-flex justify-content-end" style="color:grey; position:relative">
+            <div class="col-12 pt-5 d-flex justify-content-end" style=" position:relative">
 
                 <span class="tap" style="padding: 12px 20px 8px 20px; color: black;">TIME</span>
                 <div>
-                    <div class="rounded-box" style="background-color: #EEEEFF">
+                    <div class="rounded-box" style="background-color: #EEEEFF; color:grey;">
                         <span class="tap timeblock" style="border-left: 0px;">1D</span>
                         <span class="tap timeblock">1M</span>
                         <span class="tap timeblock">1Y</span>
                         <span class="tap timeblock timeactive">All Time</span>
                     </div>
                 </div>
-                <span class="tap" style="padding: 12px 170px 8px 20px; color: black">SORT BY</span>
-                <div class="rounded-box"
-                    style="background: #EEEEFF; color: black; width: 150px; position: absolute; z-index: 9999;">
-                    <div class="subfilter-top d-flex justify-content-between">
-                        <div>
-                            <span class="tap align-top">All Bots </span>
-                        </div>
-                        <div class="text-center">
-                            <img style="height: 8px; width: 16px" src="1178604.png" alt="showrestfilter" type="button"
-                                data-bs-toggle="collapse" class="mt-2" data-bs-target="#collapsecriteria">
-                        </div>
-                    </div>
-                    <div class="collapse" id="collapsecriteria">
-                        <div class="subfilter-bottom">
-                            <span class="tap filterblock" style="border-top: 2px solid black;">Price</span>
-                            <span class="tap filterblock">Performance</span>
-                            <span class="tap filterblock">Popularity</span>
-                            <span class="tap filterblock" style="border-radius: 0px 0px 12px 12px;;">New
-                                Bot</span>
-                        </div>
+                <span class="tap" style="padding: 12px 20px 8px 20px; color: black">SORT BY</span>
+                <div class="dropdown">
+                    <button class="dropbtn d-flex justify-content-between">
+                        All Pairs
+                        <img style="height: 8px; width: 16px" src="1178604.png" alt="showrestfilter"
+                            class="mt-2 align-middle">
+                    </button>
+                    <div class="dropdown-content">
+                        <a>Price</a>
+                        <a>Performance</a>
+                        <a>Popularity</a>
+                        <a>Latest Bot</a>
                     </div>
                 </div>
             </div>
@@ -1012,7 +990,7 @@
 
         //sidebar display-hide switch
         function w3_open() {
-            document.getElementById("sidebar").classList.toggle("hidesidebar");
+            document.getElementById("sidebar").classList.toggle("expandsidebar");
             document.getElementById("content").classList.toggle("content-close-sidebar");
         }
 
@@ -1304,23 +1282,42 @@
             },
         });
 
+        var filtertop = document.querySelectorAll('.filter-top');
+        var filterbottom = document.querySelectorAll('.filter-bottom');
+
+        for (let i = 0; i < filtertop.length; i++) {
+            filtertop[i].addEventListener('click', function () {
+                console.log('hi')
+                filterbottom[i].classList.toggle('dropdown-content-show');
+                filtertop[i].classList.toggle('dropbtn-show-content')
+            })
+        }
+
         var cards = document.querySelectorAll('.flip-card-inner');
-        var selectbots = document.querySelectorAll('.select-bot-circle');
-        var innerselectcircle = document.querySelectorAll('.inner-select-circle')
-        var readmore = document.querySelectorAll('.readmore')        
+        var readmore = document.querySelectorAll('.readmore')
         var readless = document.querySelectorAll('.readless')
 
-        for(let i = 0; i < cards.length; i++){
-            readmore[i].addEventListener( 'click', function() {
+        for (let i = 0; i < cards.length; i++) {
+            readmore[i].addEventListener('click', function () {
                 cards[i].classList.toggle('is-flipped');
             });
-            readless[i].addEventListener( 'click', function() {
+            readless[i].addEventListener('click', function () {
                 cards[i].classList.toggle('is-flipped');
-            });
-            selectbots[i].addEventListener( 'click', function() {
-                innerselectcircle[i].classList.toggle('bot-selected-turn-green');
             });
         }
+
+        var dropdowns = document.querySelectorAll('.dropdown');
+        var dropdownbtns = document.querySelectorAll('.dropbtn');
+        var dropdowncontents = document.querySelectorAll('.dropdown-content');
+        
+        for (let i = 0; i < dropdowns.length; i++) {
+            dropdownbtns[i].addEventListener('click', function () {
+                dropdowncontents[i].classList.toggle('dropdown-content-show');
+                dropdownbtns[i].classList.toggle('dropbtn-show-content')
+            })
+        }
+
+        
     </script>
 </body>
 
