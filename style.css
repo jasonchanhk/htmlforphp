@@ -35,7 +35,9 @@ html,body
   background-color: white;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   font-weight: 800 !important;
   font-family: 'Sarabun', sans-serif;
   visibility: visible;
@@ -43,6 +45,7 @@ html,body
   -webkit-transition: all 0.5s ease 0s;
 }
 .expandsidebar {
+  overflow-x: hidden;
   width: 300px;
   visibility: visible;
   transition: all 0.5s ease 0s;
@@ -155,34 +158,31 @@ html,body
   padding: 15px 50px;
   margin-top: 50px;
   display: block;
-  animation: opacityeffect 1s steps(100, end);
-  animation-delay: 2s;
-  transition: none;
+  margin-top: auto;
 }
 .sidebar-sector-blue{
   display: none;
-  opacity: 0;
 }
 .sidebar-sector-blue div:first-child{
   padding-bottom: 10px;
+}
+.sidebar-sector-blue div{
+  overflow: hidden; 
+  white-space: nowrap; 
+  animation: opacityeffect 1s steps(30, end);
 }
 .sidebar-sector-blue i{
   font-size: 16px;
   padding-left: 5px;
 }
 .expandsidebar .sidebar-lower-sector{
-  position: absolute;
-  bottom: 0;
+  margin-top: 40px;
   width: 100%;
   padding: 15px 28px 50px 50px;
   display: block;
-  animation: opacityeffect 1s steps(100, end);
-  animation-delay: 2s;
-  transition: none;
 }
 .sidebar-lower-sector{
   display: none;
-  opacity: 0;
 }
 .sidebar-lower-sector div:last-child{
   padding-top: 5px;
@@ -194,15 +194,23 @@ html,body
   padding-bottom: 5px;
   border-bottom: 1px solid black;
 }
+.sidebar-lower-sector div{
+  overflow: hidden; 
+  white-space: nowrap; 
+  animation: opacityeffect 1s steps(30, end);
+}
 
 @keyframes opacityeffect {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}@keyframes opacityeffect {
   from { opacity: 0 }
   to { opacity: 1; }
 }
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0; opacity: 0 }
+  to { width: 100%; opacity: 1 }
 }
 
 
