@@ -19,7 +19,7 @@ html,body
 .username{
   font-size: 16px;
   font-family: 'Sarabun', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 .username img {
   border-radius: 50%;
@@ -41,8 +41,10 @@ html,body
   font-weight: 800 !important;
   font-family: 'Sarabun', sans-serif;
   visibility: visible;
+  overflow-y: hidden;
   transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
+  z-index: 9999;
 }
 .expandsidebar {
   overflow-x: hidden;
@@ -57,7 +59,7 @@ html,body
   color: black;
   font-size: 25px;
   padding-left: 28px;
-  height: 88px;
+  min-height: 88px;
   width: 100%;
   border-bottom: 2px solid black;
   cursor: pointer;
@@ -90,8 +92,11 @@ html,body
 .sidebar i {
   color: black;
   font-size: 25px;
+  width: 28px;
+  height: 28px;
   line-height: 25px;
   vertical-align: middle;
+  text-align: center;
 }
 .sidebar-item-center{
   position: absolute;
@@ -106,10 +111,10 @@ html,body
   width: 70px;
   height: 70px;
   padding: 18px;
-  display: block;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   color: #000000;
   cursor: pointer;
   transition: all 0.5s ease 0s;
@@ -156,7 +161,6 @@ html,body
 .expandsidebar .sidebar-sector-blue{
   background-color: #EEEEFF;
   padding: 15px 50px;
-  margin-top: 50px;
   display: block;
   margin-top: auto;
 }
@@ -176,7 +180,7 @@ html,body
   padding-left: 5px;
 }
 .expandsidebar .sidebar-lower-sector{
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   padding: 15px 28px 50px 50px;
   display: block;
@@ -202,10 +206,7 @@ html,body
 
 @keyframes opacityeffect {
   from { opacity: 0 }
-  to { opacity: 1 }
-}@keyframes opacityeffect {
-  from { opacity: 0 }
-  to { opacity: 1; }
+  to { opacity: 0.7 }
 }
 /* The typing effect */
 @keyframes typing {
@@ -224,12 +225,34 @@ html,body
   transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
 }
-.content-close-sidebar{
-  margin-left: 300px;
+.cover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 8888;
+  opacity: 0;
+  transition-delay: 0.5s;
   transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;
+  display: none;
+}
+.content-close-cover{
+  display:block;
+  opacity: 0.7;
+  transition-delay: 0.5s;
+  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  animation: opacityeffect 0.5s steps(50, end);
+}
+.content-close-sidebar{
+  pointer-events: none;
+
 }
 .content-container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1360px;
   padding: 36px
 }
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -334,8 +357,8 @@ table img {
   height: 40px !important;
 }
 #chartforcoin2{
-  width: 350px !important;
-  height: 180px !important;
+  width: 100% !important;
+  min-height: 120px !important;
 }
 .fa-plus-circle .fa-sort-up {
   font-size: 16px;
@@ -567,7 +590,7 @@ input:checked + .slider:before {
 
 .flip-card {
   height: 550px;
-  width: 400px;
+  max-width: 400px;
   perspective: 1000px;
 }
 .flip-card-inner {
@@ -608,13 +631,14 @@ input:checked + .slider:before {
 }
 .card-component-bottom{
   padding: 20px; 
-  height: 461px; 
+  height: 461px;
   position: relative;
   background-color: white;
   border-radius: 0px 0px 12px 12px ;  
 }
 .card-component-paragraph{
-  width: 310px; 
+  max-width: 310px;
+  padding: 20px; 
   font-size: 22px; 
   font-weight: 400; 
   line-height: 29px; 
@@ -754,7 +778,7 @@ input:checked + .slider:before {
   border: 2px solid black;
   cursor: pointer;
   border-radius: 12px;
-  min-width: 20vw;
+  min-width: 100%;
   text-align: start;
   font-weight: 700;
   line-height: 21px;
@@ -764,6 +788,7 @@ input:checked + .slider:before {
   position: relative;
   display: inline-block;
   line-height: 21px;
+  width: 100%;
   letter-spacing: 0.1em;  
 }
 .dropdown-content {
@@ -776,6 +801,7 @@ input:checked + .slider:before {
   background-color: #EEEEFF;
   min-width: 20vw;
   font-weight: 500;
+  min-width: 100%;
 }
 .dropdown-content a {
   color: black;

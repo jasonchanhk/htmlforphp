@@ -54,6 +54,7 @@
         </div>
     </div>
 
+    <div id="cover" class="cover"></div>
     <!-- content -->
     <div class="content" id="content">
         <!-- topbar -->
@@ -204,7 +205,7 @@
 
             <!-- flip card -->
             <div class="row gy-5 pt-5">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="flip-card mx-auto">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
@@ -272,7 +273,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="flip-card mx-auto">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
@@ -340,7 +341,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="flip-card mx-auto">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
@@ -1007,6 +1008,7 @@
         //sidebar display-hide switch
         function w3_open() {
             document.getElementById("sidebar").classList.toggle("expandsidebar");
+            document.getElementById("cover").classList.toggle("content-close-cover");
             document.getElementById("content").classList.toggle("content-close-sidebar");
         }
 
